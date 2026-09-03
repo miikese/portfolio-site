@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{.Name}} — {{.RoleTag}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body id="top">
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="#top" class="brand">{{.Name}}.</a>
+      <div class="topnav-links">
+        <a href="#profile">01 Profile</a>
+        <a href="#skills">02 Skills</a>
+        <a href="/projects">03 Projects</a>
+        <a href="#education">04 Education</a>
+        <a href="#contact">05 Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+
+    <section class="hero">
+      <p class="fig-label">— FIG. 01 — SERVICE DEFINITION —</p>
+      <div class="hero-grid">
+        <div class="hero-box">
+          <p class="eyebrow-line">// {{.RoleTag}}</p>
+          <h1 class="headline">{{.Headline}}</h1>
+          <p class="sub-headline">{{.SubHeadline}}</p>
+
+          <div class="meta-row">
+            <div class="meta-item">
+              <span class="meta-label">STACK</span>
+              <span class="meta-value">{{.Meta.Stack}}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">BASED</span>
+              <span class="meta-value">{{.Meta.Based}}</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">PROJECTS SHIPPED</span>
+              <span class="meta-value">{{.Meta.ProjectsCount}}</span>
+            </div>
+          </div>
+
+          <div class="hero-cta">
+            <a href="/projects" class="btn btn-primary">View projects →</a>
+            <a href="mailto:{{.Contact.Email}}" class="btn">Email me</a>
+            <a href="{{.CVPath}}" class="btn" download>Download CV</a>
+          </div>
+        </div>
+
+        <div class="hero-portrait-wrap">
+          <div class="hero-portrait">
+            <img src="{{.AvatarURL}}" alt="Portrait of {{.Name}}">
+            <p class="portrait-caption">michael_emmanuel — profile.jpg</p>
+          </div>
+          <p class="maintainer-tag">↖ maintainer of this codebase</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block numbered" id="profile">
+      <h2><span class="section-num">01</span>Profile</h2>
+      <p class="bio">{{.Bio}}</p>
+    </section>
+
+    <section class="block numbered" id="skills">
+      <h2><span class="section-num">02</span>Skills</h2>
+      <div class="skill-groups">
+        {{range .SkillGroups}}
+        <div class="skill-group-card">
+          <h3><span class="skill-dot" style="background:{{.Color}}"></span>{{.Category}}</h3>
+          <div class="skill-pills">
+            {{range .Skills}}<span class="skill-pill">{{.}}</span>{{end}}
+          </div>
+        </div>
+        {{end}}
+      </div>
+    </section>
+
+    <section class="block numbered" id="projects">
+      <h2><span class="section-num">03</span>Projects</h2>
+      <p class="bio">{{.Meta.ProjectsCount}} shipped so far — HTTP servers, CLI tools, and web front ends built in Go.</p>
+      <a class="btn btn-primary" href="/projects">View all projects →</a>
+    </section>
+
+    <section class="block numbered" id="education">
+      <h2><span class="section-num">04</span>Education</h2>
+      {{range .Education}}
+      <div class="edu-entry">
+        <p class="edu-period">{{.Period}}</p>
+        <h3>{{.Title}}</h3>
+        <p class="edu-org">{{.Org}}</p>
+        <p class="edu-detail">{{.Detail}}</p>
+      </div>
+      {{end}}
+    </section>
+
+    <section class="block numbered" id="contact">
+      <h2><span class="section-num">05</span>Contact</h2>
+      <p class="contact-intro">Reachable on the following channels —</p>
+      <div class="contact-row">
+        <a href="mailto:{{.Contact.Email}}"><span class="meta-label">EMAIL</span> {{.Contact.Email}}</a>
+        <a href="{{.Contact.GitHub}}" target="_blank" rel="noopener"><span class="meta-label">GITHUB</span> {{.Contact.GitHub}}</a>
+        <a href="tel:{{.Contact.Phone}}"><span class="meta-label">PHONE</span> {{.Contact.Phone}}</a>
+        <span><span class="meta-label">LOCATION</span> {{.Contact.Based}}</span>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>© 2026 {{.Name}}</span>
+      <span>DOC REV. 1 — SCHEMATIC EDITION</span>
+    </footer>
+
+  </main>
+</body>
+</html>

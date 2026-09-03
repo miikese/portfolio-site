@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{.Project.FuncName}} — {{.Name}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a href="/" class="brand">{{.Name}}.</a>
+      <div class="topnav-links">
+        <a href="/#projects">← all projects</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="block project-detail">
+      <p class="signature signature-lg"><span class="kw">func</span> <span class="fname">{{.Project.FuncName}}</span>(<span class="params">{{.Project.Params}}</span>) <span class="ret">{{.Project.Returns}}</span></p>
+      <p class="blurb blurb-lg">{{.Project.Blurb}}</p>
+
+      <div class="tags">
+        {{range .Project.Stack}}<span class="tag">{{.}}</span>{{end}}
+      </div>
+
+      <ul class="bullets">
+        {{range .Project.Bullets}}<li>{{.}}</li>{{end}}
+      </ul>
+
+      {{if .Project.RepoURL}}
+      <a class="repo-link" href="{{.Project.RepoURL}}" target="_blank" rel="noopener">view source on GitHub →</a>
+      {{end}}
+    </section>
+
+    <footer class="footer">
+      <a href="/#projects">← back to all projects</a>
+    </footer>
+  </main>
+</body>
+</html>
