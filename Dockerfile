@@ -2,7 +2,8 @@ FROM golang:1.27-alpine@sha256:8a5910f31396cd4d89662f56c68b3ae31d374308270a1c3bd
 WORKDIR /src
 COPY go.mod ./
 COPY . .
-RUN CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o /out/portfolio .
+# Select the current patch toolchain while the pinned Alpine image catches up.
+RUN GOTOOLCHAIN=go1.27.2 CGO_ENABLED=0 go build -trimpath -ldflags="-s -w" -o /out/portfolio .
 
 FROM scratch
 COPY --from=builder /out/portfolio /portfolio

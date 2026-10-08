@@ -31,3 +31,8 @@ jobs:
         run: CGO_ENABLED=0 go build -trimpath -o portfolio .
       - name: Build production image
         run: docker build --tag portfolio:ci .
+      - name: Smoke test production container
+        run: |
+          docker run --detach --name portfolio-ci --publish 127.0.0.1:8080:8080 portfolio:ci
+          trap 'docker rm --force portfolio-ci' EXIT
+          curl --fail --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:8080/healthz
