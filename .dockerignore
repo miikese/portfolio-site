@@ -1,0 +1,9 @@
+.git
+.github
+.env
+.env.*
+!.env.example
+portfolio
+coverage.out
+*.log
+.DS_Store

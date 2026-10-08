@@ -1,0 +1,33 @@
+name: Verify portfolio
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: portfolio-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: go.mod
+          cache: false
+      - name: Check formatting
+        run: test -z "$(gofmt -l .)"
+      - name: Analyze code
+        run: go vet ./...
+      - name: Test routes and assets
+        run: go test -race -cover ./...
+      - name: Build single binary
+        run: CGO_ENABLED=0 go build -trimpath -o portfolio .
+      - name: Build production image
+        run: docker build --tag portfolio:ci .

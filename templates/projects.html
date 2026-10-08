@@ -1,49 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — {{.Name}}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css">
-</head>
-<body>
-
-  <nav class="topnav">
-    <div class="topnav-inner">
-      <a href="/" class="brand">{{.Name}}.</a>
-      <div class="topnav-links">
-        <a href="/#profile">← back home</a>
-      </div>
-    </div>
-  </nav>
-
-  <main class="wrap">
-    <section class="block">
-      <h2 class="page-title">All Projects</h2>
-      <p class="bio">{{len .Projects}} projects, built in Go from the standard library up.</p>
-
-      <div class="list projects-index">
-        {{range .Projects}}
-        <a class="project-card" href="/projects/{{.Slug}}">
-          <p class="signature"><span class="kw">func</span> <span class="fname">{{.FuncName}}</span>(<span class="params">{{.Params}}</span>) <span class="ret">{{.Returns}}</span></p>
-          <p class="blurb">{{.Blurb}}</p>
-          <ul class="bullets">
-            {{range .Bullets}}<li>{{.}}</li>{{end}}
-          </ul>
-          <div class="tags">
-            {{range .Stack}}<span class="tag">{{.}}</span>{{end}}
-          </div>
-        </a>
-        {{end}}
-      </div>
-    </section>
-
-    <footer class="footer">
-      <a href="/#top">← back to home</a>
-    </footer>
-  </main>
-</body>
-</html>
+<html lang="en"><head>{{template "head" .}}</head><body id="top">
+{{template "nav" .}}
+<main id="main" class="wrap page-main" tabindex="-1">
+  <a class="text-link breadcrumb" href="/">← Back to home</a>
+  <header class="page-heading"><p class="eyebrow">Project directory</p><h1>Ideas into<br><span>working software.</span></h1><p>HTTP services, command-line tools, and web applications. Each project is a step in my learning journey.</p></header>
+  <div class="project-filters" data-project-filters hidden><div><label for="project-search">Search projects</label><input type="search" id="project-search" placeholder="Try Go, TypeScript, or ASCII…" autocomplete="off"></div><div><label for="project-category">Category</label><select id="project-category"><option value="">All categories</option><option>HTTP services</option><option>Web applications</option><option>CLI tools</option></select></div><button type="button" class="btn" data-clear-filters>Clear filters</button></div>
+  <p id="project-count" class="results-count" role="status" aria-live="polite">{{len .Projects}} projects</p>
+  <div class="project-grid all-projects">{{range .Projects}}{{template "project-card" .}}{{end}}</div>
+  <div id="no-projects" class="empty-state" hidden><h2>No matching projects</h2><p>Try another search or clear the filters to see every project.</p></div>
+</main>
+{{template "footer" .}}
+</body></html>

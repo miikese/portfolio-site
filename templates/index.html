@@ -1,124 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{.Name}} — {{.RoleTag}}</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css">
-</head>
+<head>{{template "head" .}}</head>
 <body id="top">
-
-  <nav class="topnav">
-    <div class="topnav-inner">
-      <a href="#top" class="brand">{{.Name}}.</a>
-      <div class="topnav-links">
-        <a href="#profile">01 Profile</a>
-        <a href="#skills">02 Skills</a>
-        <a href="/projects">03 Projects</a>
-        <a href="#education">04 Education</a>
-        <a href="#contact">05 Contact</a>
-      </div>
+{{template "nav" .}}
+<main id="main" class="wrap" tabindex="-1">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <p class="availability"><span aria-hidden="true"></span>Open to remote opportunities</p>
+      <p class="eyebrow">{{.RoleTag}}</p>
+      <h1 id="hero-title">{{.Headline}}<br><span>{{.HeadlineAccent}}</span></h1>
+      <p class="hero-intro">{{.SubHeadline}}</p>
+      <div class="hero-cta"><a href="#projects" class="btn btn-primary">Explore my work <span aria-hidden="true">↗</span></a><a href="{{.CVPath}}" class="btn" download>Download CV <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-meta"><span>Based in <strong>{{.Contact.Based}}</strong></span><span><strong>Go & Python</strong> at the core</span></div>
     </div>
-  </nav>
+    <aside class="hero-aside" aria-label="Meet Michael">
+      <div class="portrait-frame"><img src="{{.AvatarURL}}" alt="Michael Ikese Emmanuel" width="1280" height="720" fetchpriority="high"><span class="portrait-label">Michael Ikese Emmanuel <span aria-hidden="true">↗</span></span></div>
+      <div class="code-note"><span class="code-label">A little about how I work</span><pre><code><span class="code-keyword">func</span> Build() Software {
+  <span class="code-keyword">return</span> Software{
+    Foundations: <span class="code-string">"solid"</span>,
+    Interfaces:  <span class="code-string">"clear"</span>,
+    Curiosity:   <span class="code-bool">true</span>,
+  }
+}</code></pre></div>
+    </aside>
+  </section>
 
-  <main class="wrap">
+  <section class="section" id="projects" aria-labelledby="projects-title">
+    <div class="section-heading"><div><p class="eyebrow">01 / Selected work</p><h2 id="projects-title">Built to solve something.</h2></div><a href="/projects" class="text-link">All {{len .Projects}} projects <span aria-hidden="true">↗</span></a></div>
+    <div class="project-grid">{{range .FeaturedProjects}}{{template "project-card" .}}{{end}}</div>
+  </section>
 
-    <section class="hero">
-      <p class="fig-label">— FIG. 01 — SERVICE DEFINITION —</p>
-      <div class="hero-grid">
-        <div class="hero-box">
-          <p class="eyebrow-line">// {{.RoleTag}}</p>
-          <h1 class="headline">{{.Headline}}</h1>
-          <p class="sub-headline">{{.SubHeadline}}</p>
+  <section class="section about-grid" id="profile" aria-labelledby="profile-title">
+    <div><p class="eyebrow">02 / A little about me</p><h2 id="profile-title">Start with the<br>fundamentals.</h2><a href="{{.Contact.GitHub}}" class="text-link" target="_blank" rel="noopener noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a></div>
+    <div><p class="bio">{{.Bio}}</p><div class="principles"><div><span class="principle-number">01</span><h3>Understand the problem</h3><p>Work through the details before reaching for a framework.</p></div><div><span class="principle-number">02</span><h3>Build and learn</h3><p>Turn each project into a chance to write clearer, more reliable code.</p></div></div></div>
+  </section>
 
-          <div class="meta-row">
-            <div class="meta-item">
-              <span class="meta-label">STACK</span>
-              <span class="meta-value">{{.Meta.Stack}}</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">BASED</span>
-              <span class="meta-value">{{.Meta.Based}}</span>
-            </div>
-            <div class="meta-item">
-              <span class="meta-label">PROJECTS SHIPPED</span>
-              <span class="meta-value">{{.Meta.ProjectsCount}}</span>
-            </div>
-          </div>
+  <section class="section" id="skills" aria-labelledby="skills-title">
+    <div class="section-heading"><div><p class="eyebrow">03 / Toolkit</p><h2 id="skills-title">The tools behind the work.</h2></div><p class="section-note">A practical foundation.<br>Always learning.</p></div>
+    <div class="skill-groups">{{range .SkillGroups}}<article class="skill-group-card"><h3>{{.Category}}</h3><div class="skill-pills">{{range .Skills}}<span class="skill-pill">{{.}}</span>{{end}}</div></article>{{end}}</div>
+  </section>
 
-          <div class="hero-cta">
-            <a href="/projects" class="btn btn-primary">View projects →</a>
-            <a href="mailto:{{.Contact.Email}}" class="btn">Email me</a>
-            <a href="{{.CVPath}}" class="btn" download>Download CV</a>
-          </div>
-        </div>
+  <section class="section education-grid" id="education" aria-labelledby="education-title"><div><p class="eyebrow">04 / Learning journey</p><h2 id="education-title">Learning by doing.</h2></div><div>{{range .Education}}<article class="edu-entry"><span class="edu-period">{{.Period}}</span><h3>{{.Title}}</h3><p class="edu-org">{{.Org}}</p><p>{{.Detail}}</p></article>{{end}}</div></section>
 
-        <div class="hero-portrait-wrap">
-          <div class="hero-portrait">
-            <img src="{{.AvatarURL}}" alt="Portrait of {{.Name}}">
-            <p class="portrait-caption">michael_emmanuel — profile.jpg</p>
-          </div>
-          <p class="maintainer-tag">↖ maintainer of this codebase</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="block numbered" id="profile">
-      <h2><span class="section-num">01</span>Profile</h2>
-      <p class="bio">{{.Bio}}</p>
-    </section>
-
-    <section class="block numbered" id="skills">
-      <h2><span class="section-num">02</span>Skills</h2>
-      <div class="skill-groups">
-        {{range .SkillGroups}}
-        <div class="skill-group-card">
-          <h3><span class="skill-dot" style="background:{{.Color}}"></span>{{.Category}}</h3>
-          <div class="skill-pills">
-            {{range .Skills}}<span class="skill-pill">{{.}}</span>{{end}}
-          </div>
-        </div>
-        {{end}}
-      </div>
-    </section>
-
-    <section class="block numbered" id="projects">
-      <h2><span class="section-num">03</span>Projects</h2>
-      <p class="bio">{{.Meta.ProjectsCount}} shipped so far — HTTP servers, CLI tools, and web front ends built in Go.</p>
-      <a class="btn btn-primary" href="/projects">View all projects →</a>
-    </section>
-
-    <section class="block numbered" id="education">
-      <h2><span class="section-num">04</span>Education</h2>
-      {{range .Education}}
-      <div class="edu-entry">
-        <p class="edu-period">{{.Period}}</p>
-        <h3>{{.Title}}</h3>
-        <p class="edu-org">{{.Org}}</p>
-        <p class="edu-detail">{{.Detail}}</p>
-      </div>
-      {{end}}
-    </section>
-
-    <section class="block numbered" id="contact">
-      <h2><span class="section-num">05</span>Contact</h2>
-      <p class="contact-intro">Reachable on the following channels —</p>
-      <div class="contact-row">
-        <a href="mailto:{{.Contact.Email}}"><span class="meta-label">EMAIL</span> {{.Contact.Email}}</a>
-        <a href="{{.Contact.GitHub}}" target="_blank" rel="noopener"><span class="meta-label">GITHUB</span> {{.Contact.GitHub}}</a>
-        <a href="tel:{{.Contact.Phone}}"><span class="meta-label">PHONE</span> {{.Contact.Phone}}</a>
-        <span><span class="meta-label">LOCATION</span> {{.Contact.Based}}</span>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <span>© 2026 {{.Name}}</span>
-      <span>DOC REV. 1 — SCHEMATIC EDITION</span>
-    </footer>
-
-  </main>
+  <section class="contact-section" id="contact" aria-labelledby="contact-title"><div><p class="eyebrow">05 / Get in touch</p><h2 id="contact-title">Have something<br>in mind?</h2><p>I'm open to remote roles, collaboration, and a good conversation about software.</p><a href="mailto:{{.Contact.Email}}" class="btn btn-primary">Let's talk <span aria-hidden="true">↗</span></a></div><address class="contact-links"><a href="mailto:{{.Contact.Email}}"><span>Email</span>{{.Contact.Email}} <span aria-hidden="true">↗</span></a><a href="{{.Contact.GitHub}}" target="_blank" rel="noopener noreferrer"><span>GitHub</span>@miikese <span aria-hidden="true">↗</span></a><a href="tel:{{.Contact.PhoneURL}}"><span>Phone</span>{{.Contact.Phone}} <span aria-hidden="true">↗</span></a><p><span>Location</span>{{.Contact.Based}} · Open to remote work</p></address></section>
+</main>
+{{template "footer" .}}
 </body>
 </html>

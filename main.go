@@ -1,252 +1,204 @@
 package main
 
 import (
+	"bytes"
+	"context"
 	"embed"
+	"errors"
+	"fmt"
 	"html/template"
+	"io/fs"
 	"log"
 	"net/http"
+	"net/url"
 	"os"
+	"os/signal"
 	"strings"
+	"syscall"
+	"time"
 )
 
-//go:embed templates/*.html
-var templateFS embed.FS
-
-//go:embed static
-var staticFS embed.FS
+//go:embed templates/*.html static
+var assets embed.FS
 
 type Project struct {
-	Slug      string
-	FuncName  string
-	Params    string
-	Returns   string
-	Blurb     string
-	Bullets   []string
-	Stack     []string
-	RepoURL   string
+	Slug, Title, Category, FuncName, Params, Returns, Blurb string
+	Bullets, Stack                                          []string
+	RepoURL, SourceLabel, DemoURL                           string
+	Featured                                                bool
 }
-
 type SkillGroup struct {
 	Category string
-	Color    string
 	Skills   []string
 }
-
-type EduEntry struct {
-	Period string
-	Title  string
-	Org    string
-	Detail string
-}
-
-type Meta struct {
-	Stack          string
-	Based          string
-	ProjectsCount  int
-}
-
+type EduEntry struct{ Period, Title, Org, Detail string }
+type Contact struct{ Email, GitHub, Phone, PhoneURL, Based string }
 type PageData struct {
-	Name        string
-	RoleTag     string // "BACKEND DEVELOPER — GO"
-	Headline    string
-	SubHeadline string
-	Meta        Meta
-	AvatarURL   string
-	CVPath      string
-	Bio         string
-	SkillGroups []SkillGroup
-	Projects    []Project
-	Education   []EduEntry
-	Contact     Contact
+	Name, RoleTag, Headline, HeadlineAccent, SubHeadline, AvatarURL, CVPath, Bio string
+	Title, Description, Page, SiteURL, CanonicalURL                              string
+	Year, Status                                                                 int
+	SkillGroups                                                                  []SkillGroup
+	Projects, FeaturedProjects                                                   []Project
+	Education                                                                    []EduEntry
+	Contact                                                                      Contact
+	Project                                                                      Project
 }
 
-type ProjectPageData struct {
-	Name      string
-	AvatarURL string
-	Project   Project
-}
-
-type ProjectsIndexData struct {
-	Name     string
-	Projects []Project
-}
-
-type Contact struct {
-	Email  string
-	GitHub string
-	Phone  string
-	Based  string
-}
-
-var projects = []Project{
-	{
-		Slug:     "ascii-art-foundations",
-		FuncName: "ValidateBanner",
-		Params:   "m map[rune][]string",
-		Returns:  "bool",
-		Blurb:    "Foundational ASCII-art rendering engine — the banner-parsing core that later became ascii-art-web.",
-		Bullets: []string{
-			"Built ValidateBanner and MergeBanners around map[rune][]string banner maps.",
-			"Established recurring patterns used across later projects: rune indexing, nil-map detection, slice-length validation.",
-			"Worked directly with strings.Builder and rune-level ASCII arithmetic — no higher-level string libraries.",
-		},
-		Stack:   []string{"Go", "runes", "strings.Builder"},
-		RepoURL: "https://github.com/miikese",
-	},
-	{
-		Slug:     "ascii-art-web",
-		FuncName: "AsciiArtWeb",
-		Params:   "text string",
-		Returns:  "HTTPService",
-		Blurb:    "A Go HTTP server with a web GUI for generating ASCII art, supporting three banner styles with live switching.",
-		Bullets: []string{
-			"Built a form-driven front end that auto-submits on style change, no client-side JS framework.",
-			"Rendered banners server-side with html/template — no CSS build step.",
-			"Handled invalid or empty input with correct HTTP status codes.",
-		},
-		Stack:   []string{"Go", "net/http", "html/template"},
-		RepoURL: "https://github.com/miikese",
-	},
-	{
-		Slug:     "echo-form-server",
-		FuncName: "EchoFormServer",
-		Params:   "r *http.Request",
-		Returns:  "Response",
-		Blurb:    "A Go HTTP server built from scratch handling /echo and /form endpoints.",
-		Bullets: []string{
-			"Enforced Content-Type headers and rejected empty request bodies.",
-			"Validated form fields before they reached any business logic.",
-			"Verified endpoint behavior with a Bash smoke-test script.",
-			"Built entirely on net/http — no router library.",
-		},
-		Stack:   []string{"Go", "net/http", "Bash"},
-		RepoURL: "https://github.com/miikese",
-	},
-	{
-		Slug:     "ascii-art-color",
-		FuncName: "AsciiArtColor",
-		Params:   "text string, color string",
-		Returns:  "string",
-		Blurb:    "Group project extending ascii-art with terminal color support via a --color flag.",
-		Bullets: []string{
-			"Used only the Go standard library — no external color packages.",
-			"Collaborated on a shared codebase with another contributor.",
-			"Code review caught an empty-substring crash risk and spec-wording mismatches before ship.",
-		},
-		Stack:   []string{"Go", "code review"},
-		RepoURL: "https://github.com/miikese",
-	},
-}
-
-var skillGroups = []SkillGroup{
-	{Category: "GO", Color: "#5FB4B0", Skills: []string{"net/http", "html/template", "os", "bufio", "go test", "slices / maps / structs", "runes", "strings.Builder", "CLI flags", "file I/O"}},
-	{Category: "PYTHON", Color: "#D4A24C", Skills: []string{"Python 3.12", "scripting", "venv", "structured JSON output"}},
-	{Category: "FRONTEND", Color: "#8FA9D6", Skills: []string{"HTML5 semantic markup", "server-side templating", "CSS basics"}},
-	{Category: "TOOLING", Color: "#C77B5B", Skills: []string{"Git branching / merging", "Bash", "Linux CLI", "unit testing", "project management"}},
-}
-
-var education = []EduEntry{
-	{
-		Period: "Present",
-		Title:  "Software Development Programme — Go & Python Curriculum",
-		Org:    "LEEF Centre, Otukpo",
-		Detail: "Project-based curriculum built around Go fundamentals through HTTP services and CLI tools, migrated from an earlier 01edu-network Go program; the curriculum has since expanded to include Python.",
-	},
-}
-
-func main() {
-	tmpl, err := template.ParseFS(templateFS, "templates/*.html")
-	if err != nil {
-		log.Fatalf("parsing templates: %v", err)
+func newHandler(siteURL string) (http.Handler, error) {
+	if siteURL != "" {
+		u, err := url.Parse(siteURL)
+		if err != nil || u.Host == "" || (u.Scheme != "https" && u.Scheme != "http") || u.User != nil || u.RawQuery != "" || u.Fragment != "" || (u.Path != "" && u.Path != "/") {
+			return nil, fmt.Errorf("SITE_URL must be an absolute http(s) origin, such as https://example.com")
+		}
+		siteURL = strings.TrimRight(siteURL, "/")
 	}
-
+	tmpl, err := template.ParseFS(assets, "templates/*.html")
+	if err != nil {
+		return nil, fmt.Errorf("parse templates: %w", err)
+	}
+	static, err := fs.Sub(assets, "static")
+	if err != nil {
+		return nil, err
+	}
+	base := portfolioData()
+	base.Year = time.Now().Year()
+	base.SiteURL = siteURL
+	for _, p := range base.Projects {
+		if p.Featured {
+			base.FeaturedProjects = append(base.FeaturedProjects, p)
+		}
+	}
+	render := func(w http.ResponseWriter, r *http.Request, name string, data PageData, status int) {
+		if siteURL != "" && status == http.StatusOK {
+			data.CanonicalURL = siteURL + r.URL.EscapedPath()
+		}
+		var body bytes.Buffer
+		if err := tmpl.ExecuteTemplate(&body, name, data); err != nil {
+			log.Printf("render %s: %v", name, err)
+			http.Error(w, "Unable to load this page.", http.StatusInternalServerError)
+			return
+		}
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		w.WriteHeader(status)
+		if r.Method != http.MethodHead {
+			_, _ = body.WriteTo(w)
+		}
+	}
+	notFound := func(w http.ResponseWriter, r *http.Request) {
+		data := base
+		data.Title, data.Description, data.Status = "Page not found", "Find your way back to Michael's portfolio.", http.StatusNotFound
+		render(w, r, "error.html", data, http.StatusNotFound)
+	}
 	mux := http.NewServeMux()
-
-	mux.Handle("/static/", http.FileServer(http.FS(staticFS)))
-
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/" {
-			http.NotFound(w, r)
+	mux.HandleFunc("GET /static/", func(w http.ResponseWriter, r *http.Request) {
+		name := strings.TrimPrefix(r.URL.Path, "/static/")
+		info, err := fs.Stat(static, name)
+		if err != nil || info.IsDir() {
+			notFound(w, r)
 			return
 		}
-		data := PageData{
-			Name:        "Michael Ikese Emmanuel",
-			RoleTag:     "BACKEND DEVELOPER — GO & PYTHON",
-			Headline:    "Backend systems built from the standard library up.",
-			SubHeadline: "Michael builds HTTP services and CLI tools in Go, backed by a project-based curriculum in algorithms, data structures, and Git-based collaboration.",
-			Meta: Meta{
-				Stack:         "Go · Python",
-				Based:         "Nigeria",
-				ProjectsCount: len(projects),
-			},
-			AvatarURL: "/static/img/avatar.jpg",
-			CVPath:    "/static/cv/resume.pdf",
-			Bio:       "Backend developer focused on Go, building HTTP servers, APIs, and command-line tools from the ground up using the standard library. Currently studying software development at LEEF Centre, Otukpo, and picking up Python alongside Go. Comfortable working through problems from first principles rather than reaching for a framework, and open to remote opportunities.",
-			SkillGroups: skillGroups,
-			Projects:    projects,
-			Education:   education,
-			Contact: Contact{
-				Email:  "emmanlemichel2019@gmail.com",
-				GitHub: "https://github.com/miikese",
-				Phone:  "08160345977",
-				Based:  "Nigeria",
-			},
-		}
-		w.Header().Set("Content-Type", "text/html; charset=utf-8")
-		if err := tmpl.ExecuteTemplate(w, "index.html", data); err != nil {
-			log.Printf("template error: %v", err)
-			http.Error(w, "internal error", http.StatusInternalServerError)
-		}
+		w.Header().Set("Cache-Control", "public, max-age=3600, must-revalidate")
+		http.StripPrefix("/static/", http.FileServer(http.FS(static))).ServeHTTP(w, r)
 	})
-
-	mux.HandleFunc("/projects", func(w http.ResponseWriter, r *http.Request) {
-		if r.URL.Path != "/projects" {
-			http.NotFound(w, r)
-			return
-		}
-		data := ProjectsIndexData{
-			Name:     "Michael Ikese Emmanuel",
-			Projects: projects,
-		}
-		w.Header().Set("Content-Type", "text/html; charset=utf-8")
-		if err := tmpl.ExecuteTemplate(w, "projects.html", data); err != nil {
-			log.Printf("template error: %v", err)
-			http.Error(w, "internal error", http.StatusInternalServerError)
-		}
+	mux.HandleFunc("GET /{$}", func(w http.ResponseWriter, r *http.Request) {
+		data := base
+		data.Title, data.Page, data.Description = data.Name+" — Backend Developer", "home", "Michael Ikese Emmanuel's portfolio: Go HTTP services, CLI tools, and web applications. Based in Nigeria and open to remote opportunities."
+		render(w, r, "index.html", data, http.StatusOK)
 	})
-
-	mux.HandleFunc("/projects/", func(w http.ResponseWriter, r *http.Request) {
-		slug := strings.TrimPrefix(r.URL.Path, "/projects/")
-		for _, p := range projects {
-			if p.Slug == slug {
-				data := ProjectPageData{
-					Name:      "Michael Ikese Emmanuel",
-					AvatarURL: "/static/img/avatar.jpg",
-					Project:   p,
-				}
-				w.Header().Set("Content-Type", "text/html; charset=utf-8")
-				if err := tmpl.ExecuteTemplate(w, "project.html", data); err != nil {
-					log.Printf("template error: %v", err)
-					http.Error(w, "internal error", http.StatusInternalServerError)
-				}
+	mux.HandleFunc("GET /projects", func(w http.ResponseWriter, r *http.Request) {
+		data := base
+		data.Title, data.Page, data.Description = "Projects — "+data.Name, "projects", "Explore Michael's Go services, command-line tools, and web applications."
+		render(w, r, "projects.html", data, http.StatusOK)
+	})
+	mux.HandleFunc("GET /projects/{slug}", func(w http.ResponseWriter, r *http.Request) {
+		for _, p := range base.Projects {
+			if p.Slug == r.PathValue("slug") {
+				data := base
+				data.Project, data.Page, data.Title, data.Description = p, "projects", p.Title+" — "+data.Name, p.Blurb
+				render(w, r, "project.html", data, http.StatusOK)
 				return
 			}
 		}
-		http.NotFound(w, r)
+		notFound(w, r)
 	})
-
-	mux.HandleFunc("/healthz", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Content-Type", "application/json")
-		w.Write([]byte(`{"status":"ok"}`))
+	mux.HandleFunc("GET /healthz", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "application/json; charset=utf-8")
+		if r.Method != http.MethodHead {
+			_, _ = w.Write([]byte(`{"status":"ok"}`))
+		}
 	})
+	mux.HandleFunc("GET /robots.txt", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+		if r.Method == http.MethodHead {
+			return
+		}
+		_, _ = fmt.Fprint(w, "User-agent: *\nAllow: /\n")
+		if siteURL != "" {
+			_, _ = fmt.Fprintf(w, "Sitemap: %s/sitemap.xml\n", siteURL)
+		}
+	})
+	mux.HandleFunc("GET /sitemap.xml", func(w http.ResponseWriter, r *http.Request) {
+		if siteURL == "" {
+			notFound(w, r)
+			return
+		}
+		w.Header().Set("Content-Type", "application/xml; charset=utf-8")
+		if r.Method == http.MethodHead {
+			return
+		}
+		_, _ = fmt.Fprint(w, `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`)
+		paths := []string{"/", "/projects"}
+		for _, p := range base.Projects {
+			paths = append(paths, "/projects/"+p.Slug)
+		}
+		for _, path := range paths {
+			_, _ = fmt.Fprintf(w, "<url><loc>%s</loc></url>", template.HTMLEscapeString(siteURL+path))
+		}
+		_, _ = fmt.Fprint(w, "</urlset>")
+	})
+	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodGet && r.Method != http.MethodHead {
+			w.Header().Set("Allow", "GET, HEAD")
+			http.Error(w, "Method not allowed", http.StatusMethodNotAllowed)
+			return
+		}
+		notFound(w, r)
+	})
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("X-Content-Type-Options", "nosniff")
+		w.Header().Set("Referrer-Policy", "strict-origin-when-cross-origin")
+		w.Header().Set("X-Frame-Options", "DENY")
+		w.Header().Set("Content-Security-Policy", "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'")
+		w.Header().Set("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
+		mux.ServeHTTP(w, r)
+	}), nil
+}
 
+func main() {
+	handler, err := newHandler(os.Getenv("SITE_URL"))
+	if err != nil {
+		log.Fatal(err)
+	}
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
 	}
-
-	log.Printf("serving on :%s", port)
-	if err := http.ListenAndServe(":"+port, mux); err != nil {
-		log.Fatal(err)
+	server := &http.Server{Addr: ":" + port, Handler: handler, ReadHeaderTimeout: 5 * time.Second, ReadTimeout: 10 * time.Second, WriteTimeout: 15 * time.Second, IdleTimeout: 60 * time.Second}
+	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+	defer stop()
+	failures := make(chan error, 1)
+	go func() { log.Printf("serving on %s", server.Addr); failures <- server.ListenAndServe() }()
+	select {
+	case err := <-failures:
+		if !errors.Is(err, http.ErrServerClosed) {
+			log.Fatal(err)
+		}
+	case <-ctx.Done():
+		shutdownCtx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+		defer cancel()
+		if err := server.Shutdown(shutdownCtx); err != nil {
+			log.Printf("shutdown: %v", err)
+			_ = server.Close()
+		}
 	}
 }
