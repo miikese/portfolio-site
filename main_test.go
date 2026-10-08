@@ -19,7 +19,7 @@ func TestRoutes(t *testing.T) {
 		path, contentType, contains string
 		status                      int
 	}{
-		{"/", "text/html", "Thoughtful code.", 200},
+		{"/", "text/html", "Engineering ideas.", 200},
 		{"/projects", "text/html", "project-search", 200},
 		{"/projects/portfolio-site", "text/html", "Inside the project", 200},
 		{"/projects/not-a-project", "text/html", "off the path.", 404},
@@ -71,7 +71,7 @@ func TestMethodAndHead(t *testing.T) {
 	// Use a real server: net/http itself suppresses HEAD bodies for static files.
 	server := httptest.NewServer(handler)
 	defer server.Close()
-	for _, path := range []string{"/", "/projects", "/projects/ascii-art-web", "/healthz", "/static/cv/resume.pdf", "/missing"} {
+	for _, path := range []string{"/", "/projects", "/projects/global-browser", "/healthz", "/static/cv/resume.pdf", "/missing"} {
 		response, err := http.Head(server.URL + path)
 		if err != nil {
 			t.Fatal(err)

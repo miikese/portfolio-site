@@ -1,0 +1,22 @@
+{
+  "name": "Michael Ikese Emmanuel",
+  "role": "Software Engineer & Programmer | Project Manager in Training",
+  "contact": "emmanlemichel2019@gmail.com | +234 816 034 5977 | github.com/miikese",
+  "location": "Nigeria | Open to remote opportunities, collaboration, and on-the-job learning",
+  "summary": "Software engineer and programmer building practical applications with Go, Python, and web technologies. Project manager in training, developing planning, communication, and delivery skills. Cybersecurity enthusiast exploring secure software design. Open to unfamiliar technologies, mentorship, and opportunities to learn while contributing.",
+  "skills": [
+    ["Languages & interfaces", "Go, Python, JavaScript, TypeScript, HTML, CSS, React, Tailwind CSS"],
+    ["Backend & workflow", "net/http, html/template, SQLite, WebSocket, JSON, Git, Linux, Bash, unit testing"],
+    ["Management training", "Scope and requirements, task planning, prioritization, risk tracking, stakeholder communication, progress reporting, Agile and Scrum fundamentals"],
+    ["Learning interests", "Cybersecurity fundamentals, secure software design, networking, PostgreSQL"]
+  ],
+  "projects": [
+    {"title": "Global Browser", "stack": "Go | Chromium | WebSocket | SQLite | Linux | Private source", "description": "Built a working browser-platform MVP with isolated Chromium sessions and a web viewer. Includes authentication, account roles, session quotas, persistent account data, destination checks, and session cleanup."},
+    {"title": "Smile Learning", "stack": "React | TypeScript | Vite | Tailwind CSS | github.com/miikese/past-quest-solver", "description": "Developed a responsive interface for exploring past exam questions and answers. Organized reusable question cards, subject views, and search and filtering controls around static and mock study data."},
+    {"title": "Campus Resource Manager", "stack": "Python | JSON | unittest | Private source", "description": "Implemented a menu-driven campus inventory application with borrowing, returns, search, and reports. Validates requests before changing records; includes JSON persistence, demonstrations, and regression tests."},
+    {"title": "Engineering Portfolio", "stack": "Go | HTML | CSS | JavaScript | github.com/miikese/portfolio-site", "description": "Built a server-rendered portfolio delivered as one Go binary. Includes accessible project pages, shareable search filters, light and dark themes, security headers, route tests, and container configuration."}
+  ],
+  "education": "Software Development Programme | LEEF Centre, Otukpo | Present",
+  "education_detail": "Project-based Go and Python curriculum covering command-line tools, HTTP services, and practical software development. Ongoing project management training focuses on planning, coordination, and delivery.",
+  "availability": "Open to software engineering, programming, and project coordination opportunities with room to learn."
+}

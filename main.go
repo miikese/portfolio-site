@@ -13,6 +13,7 @@ import (
 	"net/url"
 	"os"
 	"os/signal"
+	"sort"
 	"strings"
 	"syscall"
 	"time"
@@ -22,10 +23,11 @@ import (
 var assets embed.FS
 
 type Project struct {
-	Slug, Title, Category, FuncName, Params, Returns, Blurb string
-	Bullets, Stack                                          []string
-	RepoURL, SourceLabel, DemoURL                           string
-	Featured                                                bool
+	Slug, Title, Category, Blurb                 string
+	Bullets, Stack                               []string
+	RepoURL, SourceLabel, DemoURL                string
+	Featured                                     bool
+	RepoName, Status, Visibility, Focus, Outcome string
 }
 type SkillGroup struct {
 	Category string
@@ -37,6 +39,8 @@ type PageData struct {
 	Name, RoleTag, Headline, HeadlineAccent, SubHeadline, AvatarURL, CVPath, Bio string
 	Title, Description, Page, SiteURL, CanonicalURL                              string
 	Year, Status                                                                 int
+	RepositoryCount                                                              int
+	Categories                                                                   []string
 	SkillGroups                                                                  []SkillGroup
 	Projects, FeaturedProjects                                                   []Project
 	Education                                                                    []EduEntry
@@ -63,11 +67,20 @@ func newHandler(siteURL string) (http.Handler, error) {
 	base := portfolioData()
 	base.Year = time.Now().Year()
 	base.SiteURL = siteURL
+	categories := make(map[string]bool)
 	for _, p := range base.Projects {
+		categories[p.Category] = true
+		if p.RepoName != "" {
+			base.RepositoryCount++
+		}
 		if p.Featured {
 			base.FeaturedProjects = append(base.FeaturedProjects, p)
 		}
 	}
+	for category := range categories {
+		base.Categories = append(base.Categories, category)
+	}
+	sort.Strings(base.Categories)
 	render := func(w http.ResponseWriter, r *http.Request, name string, data PageData, status int) {
 		if siteURL != "" && status == http.StatusOK {
 			data.CanonicalURL = siteURL + r.URL.EscapedPath()
@@ -102,12 +115,12 @@ func newHandler(siteURL string) (http.Handler, error) {
 	})
 	mux.HandleFunc("GET /{$}", func(w http.ResponseWriter, r *http.Request) {
 		data := base
-		data.Title, data.Page, data.Description = data.Name+" — Backend Developer", "home", "Michael Ikese Emmanuel's portfolio: Go HTTP services, CLI tools, and web applications. Based in Nigeria and open to remote opportunities."
+		data.Title, data.Page, data.Description = data.Name+" — Software Engineer & Programmer", "home", "Software engineer, programmer, and cybersecurity enthusiast based in Nigeria. Explore Michael's Go, Python, and web projects. Open to work, collaboration, and learning new technologies."
 		render(w, r, "index.html", data, http.StatusOK)
 	})
 	mux.HandleFunc("GET /projects", func(w http.ResponseWriter, r *http.Request) {
 		data := base
-		data.Title, data.Page, data.Description = "Projects — "+data.Name, "projects", "Explore Michael's Go services, command-line tools, and web applications."
+		data.Title, data.Page, data.Description = "Projects — "+data.Name, "projects", "Explore Michael's software projects, from browser infrastructure and learning platforms to Python tools and early experiments."
 		render(w, r, "projects.html", data, http.StatusOK)
 	})
 	mux.HandleFunc("GET /projects/{slug}", func(w http.ResponseWriter, r *http.Request) {

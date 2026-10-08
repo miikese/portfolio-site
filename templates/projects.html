@@ -3,11 +3,11 @@
 {{template "nav" .}}
 <main id="main" class="wrap page-main" tabindex="-1">
   <a class="text-link breadcrumb" href="/">← Back to home</a>
-  <header class="page-heading"><p class="eyebrow">Project directory</p><h1>Ideas into<br><span>working software.</span></h1><p>HTTP services, command-line tools, and web applications. Each project is a step in my learning journey.</p></header>
-  <div class="project-filters" data-project-filters hidden><div><label for="project-search">Search projects</label><input type="search" id="project-search" placeholder="Try Go, TypeScript, or ASCII…" autocomplete="off"></div><div><label for="project-category">Category</label><select id="project-category"><option value="">All categories</option><option>HTTP services</option><option>Web applications</option><option>CLI tools</option></select></div><button type="button" class="btn" data-clear-filters>Clear filters</button></div>
-  <p id="project-count" class="results-count" role="status" aria-live="polite">{{len .Projects}} projects</p>
+  <header class="page-heading"><p class="eyebrow">The project collection / {{.RepositoryCount}} repositories</p><h1>Engineering with<br><span>something to show.</span></h1><p>Four substantive projects across browser infrastructure, education, resource management, and web engineering. Explore the implementation, the technology, and the boundaries of each.</p></header>
+  <div class="project-filters" data-project-filters hidden><div><label for="project-search">Find a project or technology</label><input type="search" id="project-search" placeholder="Try Python, browser, or React…" autocomplete="off"></div><div><label for="project-category">Area of work</label><select id="project-category"><option value="">All categories</option>{{range .Categories}}<option>{{.}}</option>{{end}}</select></div><div><label for="project-stage">Collection</label><select id="project-stage"><option value="">All entries</option><option value="featured">Selected work</option><option value="public">Public repositories</option><option value="private">Private project overviews</option></select></div><button type="button" class="btn" data-clear-filters>Reset</button></div>
+  <div class="directory-meta"><p id="project-count" class="results-count" role="status" aria-live="polite">{{len .Projects}} entries</p><p>Private projects have an overview; public projects link to source.</p></div>
   <div class="project-grid all-projects">{{range .Projects}}{{template "project-card" .}}{{end}}</div>
-  <div id="no-projects" class="empty-state" hidden><h2>No matching projects</h2><p>Try another search or clear the filters to see every project.</p></div>
+  <div id="no-projects" class="empty-state" hidden><h2>No matching projects</h2><p>Try another search or reset the filters to explore the collection.</p></div>
 </main>
 {{template "footer" .}}
 </body></html>

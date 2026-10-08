@@ -1,80 +1,93 @@
 %PDF-1.4
-%“Œ‹ž ReportLab Generated PDF document (opensource)
+%âãÏÓ
 1 0 obj
-<<
-/F1 2 0 R /F2 3 0 R /F3 4 0 R
->>
+<< /Type /Catalog /Pages 2 0 R >>
 endobj
 2 0 obj
-<<
-/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
->>
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
 endobj
 3 0 obj
-<<
-/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
->>
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 4 0 R /F2 5 0 R >> >> /Contents 6 0 R /Annots [8 0 R 9 0 R] >>
 endobj
 4 0 obj
-<<
-/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
 endobj
 5 0 obj
-<<
-/Contents 9 0 R /MediaBox [ 0 0 612 792 ] /Parent 8 0 R /Resources <<
-/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
->> /Rotate 0 /Trans <<
-
->> 
-  /Type /Page
->>
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<<
-/PageMode /UseNone /Pages 8 0 R /Type /Catalog
->>
+<< /Length 5278 >>
+stream
+BT /F2 24 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 793.0 Tm (Michael Ikese Emmanuel) Tj ET
+BT /F1 10.2 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 762.0 Tm (Software Engineer & Programmer | Project Manager in Training) Tj ET
+BT /F1 8.8 Tf 0.31 0.37 0.43 rg 1 0 0 1 44 742.0 Tm (emmanlemichel2019@gmail.com | +234 816 034 5977 | github.com/miikese) Tj ET
+BT /F1 8.4 Tf 0.31 0.37 0.43 rg 1 0 0 1 44 728.0 Tm (Nigeria | Open to remote opportunities, collaboration, and on-the-job learning) Tj ET
+BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 702.0 Tm (PROFILE) Tj ET
+0.14 0.31 0.81 RG 0.5 w 44 692.0 m 551 692.0 l S
+BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 681.0 Tm (Software engineer and programmer building practical applications with Go, Python, and web technologies.) Tj ET
+BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 668.0 Tm (Project manager in training, developing planning, communication, and delivery skills. Cybersecurity) Tj ET
+BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 655.0 Tm (enthusiast exploring secure software design. Open to unfamiliar technologies, mentorship, and) Tj ET
+BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 642.0 Tm (opportunities to learn while contributing.) Tj ET
+BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 617.0 Tm (SKILLS & DEVELOPMENT) Tj ET
+0.14 0.31 0.81 RG 0.5 w 44 607.0 m 551 607.0 l S
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 596.0 Tm (Languages & interfaces: Go, Python, JavaScript, TypeScript, HTML, CSS, React, Tailwind CSS) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 583.0 Tm (Backend & workflow: net/http, html/template, SQLite, WebSocket, JSON, Git, Linux, Bash, unit testing) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 570.0 Tm (Management training: Scope and requirements, task planning, prioritization, risk tracking, stakeholder) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 557.0 Tm (communication, progress reporting, Agile and Scrum fundamentals) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 544.0 Tm (Learning interests: Cybersecurity fundamentals, secure software design, networking, PostgreSQL) Tj ET
+BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 519.0 Tm (SELECTED PROJECTS) Tj ET
+0.14 0.31 0.81 RG 0.5 w 44 509.0 m 551 509.0 l S
+BT /F2 10.5 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 498.0 Tm (Global Browser) Tj ET
+BT /F1 8.0 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 483.0 Tm (Go | Chromium | WebSocket | SQLite | Linux | Private source) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 471.0 Tm (Built a working browser-platform MVP with isolated Chromium sessions and a web viewer. Includes) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 458.0 Tm (authentication, account roles, session quotas, persistent account data, destination checks, and session) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 445.0 Tm (cleanup.) Tj ET
+BT /F2 10.5 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 424.0 Tm (Smile Learning) Tj ET
+BT /F1 8.0 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 409.0 Tm (React | TypeScript | Vite | Tailwind CSS | github.com/miikese/past-quest-solver) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 397.0 Tm (Developed a responsive interface for exploring past exam questions and answers. Organized reusable) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 384.0 Tm (question cards, subject views, and search and filtering controls around static and mock study data.) Tj ET
+BT /F2 10.5 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 363.0 Tm (Campus Resource Manager) Tj ET
+BT /F1 8.0 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 348.0 Tm (Python | JSON | unittest | Private source) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 336.0 Tm (Implemented a menu-driven campus inventory application with borrowing, returns, search, and reports.) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 323.0 Tm (Validates requests before changing records; includes JSON persistence, demonstrations, and regression) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 310.0 Tm (tests.) Tj ET
+BT /F2 10.5 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 289.0 Tm (Engineering Portfolio) Tj ET
+BT /F1 8.0 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 274.0 Tm (Go | HTML | CSS | JavaScript | github.com/miikese/portfolio-site) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 262.0 Tm (Built a server-rendered portfolio delivered as one Go binary. Includes accessible project pages,) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 249.0 Tm (shareable search filters, light and dark themes, security headers, route tests, and container) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 236.0 Tm (configuration.) Tj ET
+BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 203.0 Tm (EDUCATION & ONGOING LEARNING) Tj ET
+0.14 0.31 0.81 RG 0.5 w 44 193.0 m 551 193.0 l S
+BT /F2 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 182.0 Tm (Software Development Programme | LEEF Centre, Otukpo | Present) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 167.0 Tm (Project-based Go and Python curriculum covering command-line tools, HTTP services, and practical) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 154.0 Tm (software development. Ongoing project management training focuses on planning, coordination, and) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 141.0 Tm (delivery.) Tj ET
+BT /F1 8.7 Tf 0.31 0.37 0.43 rg 1 0 0 1 44 119.0 Tm (Open to software engineering, programming, and project coordination opportunities with room to learn.) Tj ET
+endstream
 endobj
 7 0 obj
-<<
-/Author (\(anonymous\)) /CreationDate (D:20260902130147+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260902130147+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
-  /Subject (\(unspecified\)) /Title (Michael Ikese Emmanuel - Resume) /Trapped /False
->>
+<< /Title (Michael Ikese Emmanuel - CV) /Author (Michael Ikese Emmanuel) /Subject (Software engineering, programming, and project management training) >>
 endobj
 8 0 obj
-<<
-/Count 1 /Kids [ 5 0 R ] /Type /Pages
->>
+<< /Type /Annot /Subtype /Link /Rect [44 741 239 756] /Border [0 0 0] /A << /S /URI /URI (mailto:emmanlemichel2019@gmail.com) >> >>
 endobj
 9 0 obj
-<<
-/Filter [ /ASCII85Decode /FlateDecode ] /Length 1891
->>
-stream
-Gau0D9lo&I&A@sBm&B#e/;g5O;JIkm*SFHP`3,rt'))Bg.hOL-YQ/?>s1Sk+P!=\0UD\8d>7ppF+*QPU>rVhV?@i'EQ2kQ=k[+H(KJ6b"&:"l3Y@'+MqWB9ZY)Id"Jq4`dEZ4TPIlJ@#i!%#;*!JUfEcjd^"T+0mMiot-+gd_nZ.\^C'2N\("\eA^+\^%A<=K`4@/_2/^D`#[dHcM:GWahcIBgP*p,@N*SjE+&,TK9`n=jG-%1$$G?q(8/NmCgRO&ZDQnGs"pUP-659]/fj=s!pMejFBNdf.l-&:hSN*lS4:9KuD6&'*6ZRY)AXdcn"BrF#QDWard3;F/U;p5eZo,]TFVr)"%&K4m5>P.'Tif6O\V&,/`BXX@=RIDk61T>5*R6HNBbMX)02ciPJY66iRc]^PJ]*:J7e^m]^:*-icQ7W/ur8Mm7;;)fC&i:c`?Z4E64NC/"F@+MXB+?G$LZ#dIL<"M$-#9umAS(m7el.)R;q_/<eiGS!5&ZpGI&_>6f6.qhq99D+>1Ct;kkQDY10/?k9i6V5s"r,2bPj/BHDl3/nd?>8",!sj2G_P4(;(,O=idf;d<`1c]UoAS$3,Xu6bKMD0:GJ8'_&&9VN<eX+PZ[0Z6ZYu10aj7Kl8=d8_cP:a$*8t7^hdu7UAIQa$d;WW@L4t4SJ-+Bp*SBn'XYD!QU5Gq-uf2/Y;.B;ABq.!$15lOXL)eAh+5abTU+S!VRj6E`[N?&jCqOLV)u>76+=O!;:f?ZWOV)h]ZqWhr`epS_rQ2/la.BJ6C?]!/UqQZ9#EA^.H`i@20">eb;:$#K"L'HXPi^[cWF0ZOo"PRj_FZeh7`--k-ll#i41$@@/OA`GUZ/airimkTlM5(QkX>tSJ`WHlp;<';*0Z^_MIp&loQ1=5(qsS]h_`2VmH!Ze@J6jSf&f(e]O\F8M"_aXCUu_KD4hQIlja9E"8ZMjTOE#M];$59\L1QKm_mLcC'E=>VBN:.4Z#(1$Yl\iP@o"k&Ze$LMNc$+[o)!9lu[nU"&f+/`"rqeqH"L*m*1D<4qE,TY8GU26EWPSq&;8MS4Ve7;;SU83diZ]T7eO=2,f;hO()#r1-*i[q/m"\t<bD]5P54Mn[3:2W!hQ0c5r]3VTIPbYLg8TBik41LqZ2`!'CpR8V$s7nPJ2>Tlt%D55`cd;ne/ECW"2T1qV^A2UjS%o9!"1mI.0hLf$*DFN(+>bVgLCVQclL@3/U5[&,qG@M_,<$[9t7Yu[=S^1oNdZ?Jj4..lANEV`+8E/2c"u"`"-`6eaJ$&`)bm"#S]N&jqdKq?Dr/VgY@k-rS4uas%IZc`eSno]S.<-WX+fC3!(k2+ZHVFD(>7XU'CV_O'[\`e)<8*"O^8[5ABhaJnEppP+)50"&Kuc0J6JluR@Wl!s,SiL@&bnu(8YatAll1G).`FRE1b*A#nQL-XAlne7NsCG>hk*c8<"u'j/)`I5;m)pJdRiF#a*"<5i?9Id"n+<?HG8PQP;l0B^*Wj0/_.IZ!Vf1tc^`RbS3"+FW<?@_VLNUuUbYkh;]MpCG.IbdeBg#83=j!4?rV5Q[jW`\SaD]_GP4I0$i/im8/ZPkRRdUBD5p`TlRVLn-mZ@7\!0fKVEIg$$btc&1i+P]>N#'tO]=F1<i.QcB3BHjbC87,bs"n+Xu\YW?lZV<.suKEm-7s!Y:]LKD-PgO@mm)A4.4@J-ML-`13^^<k-8d_P3]Pb>9fNpWG2UH,pM/6fZL3gVk`7\$-D9,Qh/]%o_NX,Z)Bf8LK:;*mP=G6kq_>r_lLo?!m^&2`"TZ3c$eFD++W:Bs*FU9@a';\P!gbui0mt]Q)u?*di9=bN:)P7)qSPG$/O2Tl6k-NB%IbT$2XkLR0""SP\S?N9o2N?W9B$h2d`I0*;p99Lr[m~>endstream
+<< /Type /Annot /Subtype /Link /Rect [337 741 462 756] /Border [0 0 0] /A << /S /URI /URI (https://github.com/miikese) >> >>
 endobj
 xref
 0 10
 0000000000 65535 f 
-0000000061 00000 n 
-0000000112 00000 n 
-0000000219 00000 n 
-0000000331 00000 n 
-0000000446 00000 n 
-0000000639 00000 n 
-0000000707 00000 n 
-0000001005 00000 n 
-0000001064 00000 n 
+0000000015 00000 n 
+0000000064 00000 n 
+0000000121 00000 n 
+0000000279 00000 n 
+0000000376 00000 n 
+0000000478 00000 n 
+0000005808 00000 n 
+0000005977 00000 n 
+0000006124 00000 n 
 trailer
-<<
-/ID 
-[<fd6616de5de1327573b97dcfab811db9><fd6616de5de1327573b97dcfab811db9>]
-% ReportLab generated PDF document -- digest (opensource)
-
-/Info 7 0 R
-/Root 6 0 R
-/Size 10
->>
+<< /Size 10 /Root 1 0 R /Info 7 0 R >>
 startxref
-3046
+6264
 %%EOF

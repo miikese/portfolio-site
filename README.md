@@ -1,6 +1,6 @@
 # Michael Ikese Emmanuel — Portfolio
 
-A personal portfolio for Go services, command-line tools, and web applications. It runs as a single Go binary with embedded templates and assets, with no frontend framework, package manager, or build step.
+A professional portfolio for Michael Ikese Emmanuel: software engineer and programmer, project manager in training, and cybersecurity enthusiast. The curated collection highlights Global Browser, Smile Learning, Campus Resource Manager, and this portfolio. It runs as a single Go binary with embedded templates and assets, with no frontend framework, package manager, or build step.
 
 ## Run locally
 
@@ -18,11 +18,11 @@ Open http://localhost:8080. The site includes a homepage, a searchable project d
 
 - **Profile, contact details, skills, education:** edit `portfolioData`, `skillGroups`, and `education` in `content.go`.
 - **Projects:** edit the `projects` slice in `content.go`. Use a unique URL-safe `Slug`, a `Title`, a `Category`, a description, and a technology stack. `Featured: true` includes a project on the homepage.
-- **Links:** supply the actual repository in `RepoURL`, a suitable `SourceLabel`, and an optional `DemoURL`. The original learning projects retain a clearly labeled GitHub profile link until their individual repository URLs are available.
-- **Portrait:** replace `static/img/avatar.jpg`. The image is already included.
-- **CV:** replace `static/cv/resume.pdf`. The PDF is already included.
+- **Links:** supply the actual repository in `RepoURL`, a suitable `SourceLabel`, and an optional `DemoURL`. The public collection is curated; small exercises and unimplemented concepts are omitted.
+- **Branding:** `static/img/profile-mark.png` is the original miikese logo used on the homepage; the matching SVG and custom profile banner are under `static/img/`. The previous portrait remains available at `static/img/avatar.jpg`.
+- **CV:** edit `cv/content.json`, then run `python3 scripts/build-cv.py`. This generates a selectable-text, single-page A4 PDF using only the Python standard library.
 - **Design:** edit `static/css/style.css`; shared navigation and metadata live in `templates/shared.html`.
-- **Categories:** if adding a new category, add it to the category selector in `templates/projects.html`.
+- **Categories:** the project filter derives its categories from the content automatically. Private entries have a written overview and no public source link.
 
 All files under `static/` and `templates/` are embedded at build time. Rebuild after editing them when running a compiled binary.
 
@@ -86,10 +86,20 @@ templates/error.html       Accessible 404 page
 static/css/style.css       Responsive light/dark design
 static/js/theme.js         Theme initialization before first paint
 static/js/main.js          Mobile menu, theme switch, project filters
-static/img/                Portrait and favicon
+static/img/                Custom logo, banners, original portrait, and favicon
 static/cv/resume.pdf        Downloadable CV
 .github/workflows/ci.yml    Automated verification
 Dockerfile                 Minimal non-root production image
 ```
 
 The layout includes keyboard focus styles, a skip link, labeled search controls, reduced-motion support, print styles, page descriptions, and social preview metadata. Static directory listings are disabled. The server sets security headers and bounded request timeouts.
+
+## Profile assets and presentation
+
+`github-profile/README.md` is the prepared GitHub profile introduction, project showcase, training focus, and verified contact information. `github-profile/SETUP.md` records account fields, profile visibility, and suggested pins.
+
+The original banner and logo share the site design. Run `python3 scripts/build-profile-graphics.py` to rebuild the GIF and PNG assets; this optional script requires Pillow and the DejaVu fonts. The site has no runtime Python dependency. The SVG sources can be edited directly. The homepage uses lightweight entrance and hover motion, with a reduced-motion override.
+
+Project search accepts shareable `q`, `category`, and `collection` query parameters. With JavaScript disabled, every project remains visible and navigation and contact links still work.
+
+See [project selection](docs/project-selection.md) for the content review and [refresh report](docs/refresh-report.md) for validation and delivery details.
