@@ -2,7 +2,7 @@ package main
 
 // Repository-backed entries were reviewed against GitHub on 8 October 2026.
 // Private projects publish summaries only; RepoURL is deliberately empty.
-// The public collection is curated to the four strongest implemented projects.
+// The public collection includes implemented work and the requested TalentGrid project in development.
 var projects = []Project{
 	{
 		Slug: "global-browser", Title: "Global Browser", RepoName: "global-browser",
@@ -28,6 +28,14 @@ var projects = []Project{
 		Focus: "Data integrity · practical automation", Outcome: "A complete menu-driven resource-management application with regression tests.",
 		Bullets: []string{"Supports resource creation, search, category filters, borrowing, returns, and inventory reports.", "Validates requests before changing inventory and saves successful operations to JSON.", "Includes demonstration output, design documentation, and standard-library regression tests.", "Designed for a single local operator; concurrent writes would require a different storage strategy."},
 		Stack:   []string{"Python", "JSON", "unittest", "CLI"},
+	},
+	{
+		Slug: "talentgrid", Title: "TalentGrid", RepoName: "talentgrid",
+		Category: "Web applications", Featured: true, Status: "In development", Visibility: "Private source",
+		Blurb: "A sector-based talent directory that connects professional profiles, skills, and work experience with searchable discovery.",
+		Focus: "Talent discovery · relational data", Outcome: "An evolving Go and PostgreSQL application with profile, account, and talent-search handlers.",
+		Bullets: []string{"Current source includes registration, login, JWT authentication, and account-management handlers.", "Models sectors, skills, and work experience in PostgreSQL, with profile editing and filtered, paginated talent search.", "Includes a web interface and routes for contact requests and support-message storage.", "Source reviewed on 9 October 2026. Full database-backed runtime validation and production deployment have not been verified in this portfolio review."},
+		Stack:   []string{"Go", "PostgreSQL", "JWT", "HTML", "CSS", "JavaScript"},
 	},
 	{
 		Slug: "portfolio-site", Title: "Engineering Portfolio", RepoName: "portfolio-site",

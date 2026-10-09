@@ -1,6 +1,6 @@
 # Michael Ikese Emmanuel — Portfolio
 
-A professional portfolio for Michael Ikese Emmanuel: software engineer and programmer, project manager in training, and cybersecurity enthusiast. The curated collection highlights Global Browser, Smile Learning, Campus Resource Manager, and this portfolio. It runs as a single Go binary with embedded templates and assets, with no frontend framework, package manager, or build step.
+A professional portfolio for Michael Ikese Emmanuel: software engineer and programmer, project manager in training, and cybersecurity enthusiast. The curated collection highlights Global Browser, Smile Learning, Campus Resource Manager, TalentGrid (in development), and this portfolio. It runs as a single Go binary with embedded templates and assets, with no frontend framework, package manager, or build step.
 
 ## Run locally
 

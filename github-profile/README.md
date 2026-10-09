@@ -24,6 +24,7 @@ I'm studying software development at **LEEF Centre, Otukpo**, training in projec
 | **Global Browser** · Private source | A working browser-platform MVP with isolated Chromium sessions, a web viewer, authentication, account roles, quotas, and session cleanup. | Go, Chromium, WebSocket, SQLite, Linux |
 | [**Smile Learning**](https://github.com/miikese/past-quest-solver) | A responsive study interface with question cards, subject views, and search and filtering. Uses static and mock study data. | React, TypeScript, Vite, Tailwind CSS |
 | **Campus Resource Manager** · Private source | Campus inventory, borrowing, returns, search, and reports, with validation, JSON persistence, and regression tests. | Python, JSON, unittest |
+| **TalentGrid** · In development · Private source | A sector-based talent directory. Current source includes accounts, editable profiles, skills and experience, paginated talent search, and contact-request handlers. Runtime validation is still pending. | Go, PostgreSQL, JWT, HTML, CSS, JavaScript |
 | [**Engineering Portfolio**](https://github.com/miikese/portfolio-site) | A single-binary Go site with accessible project pages, shareable filters, responsive themes, and route tests. | Go, HTML, CSS, JavaScript |
 
 Private projects are described at a high level. Their source remains private.
