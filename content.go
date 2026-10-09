@@ -5,6 +5,15 @@ package main
 // The public collection includes implemented work and the requested TalentGrid project in development.
 var projects = []Project{
 	{
+		Slug: "smartconvert", Title: "SmartConvert", RepoName: "SmileConvert",
+		Category: "Web applications", Featured: true, Status: "Tested demo MVP", Visibility: "Private source",
+		Blurb: "A booking-slip translation workspace that compares selection meaning, explains uncertain matches, and asks for review before export.",
+		Focus: "Go + Python orchestration · semantic matching", Outcome: "A locally runnable hybrid application with verified demo exports and persistent review receipts.",
+		Bullets: []string{"Go owns authentication, roles, subscriptions, independent NGN/USD prices, notifications, history, and database writes; a private FastAPI service handles matching.", "Uses RapidFuzz with event identity checks and exact market lines. Different outcome sides, periods, or settlement rules cannot be accepted as equivalent.", "Three fictitious demo adapters support inspect, compare, confirm, export, and re-import verification. Demo batches never consume real conversion credits.", "Validated with Go race tests, Python tests, Go-to-Python integration, PostgreSQL credit concurrency, and desktop/mobile browser checks. Real bookmaker integrations and live payments are unavailable."},
+		Stack:   []string{"Go", "Python", "FastAPI", "RapidFuzz", "PostgreSQL", "JavaScript"},
+	},
+
+	{
 		Slug: "global-browser", Title: "Global Browser", RepoName: "global-browser",
 		Category: "Systems & infrastructure", Featured: true, Status: "Working MVP", Visibility: "Private source",
 		Blurb: "A browser you control through the web. Go powers isolated Chromium sessions, account access, and a live browser viewer.",
