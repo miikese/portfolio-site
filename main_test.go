@@ -19,7 +19,7 @@ func TestRoutes(t *testing.T) {
 		path, contentType, contains string
 		status                      int
 	}{
-		{"/", "text/html", "Engineering ideas.", 200},
+		{"/", "text/html", "Useful software.", 200},
 		{"/projects", "text/html", "project-search", 200},
 		{"/projects/portfolio-site", "text/html", "Inside the project", 200},
 		{"/projects/not-a-project", "text/html", "off the path.", 404},
@@ -29,7 +29,7 @@ func TestRoutes(t *testing.T) {
 		{"/robots.txt", "text/plain", "Sitemap: https://portfolio.example/sitemap.xml", 200},
 		{"/static/css/style.css", "text/css", "prefers-reduced-motion", 200},
 		{"/static/js/main.js", "javascript", "localStorage", 200},
-		{"/static/img/avatar.jpg", "image/jpeg", "", 200},
+		{"/static/img/portrait.png", "image/png", "", 200},
 		{"/static/cv/resume.pdf", "application/pdf", "%PDF", 200},
 		{"/static/", "text/html", "off the path.", 404},
 		{"/static/img/", "text/html", "off the path.", 404},

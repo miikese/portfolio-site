@@ -39,6 +39,7 @@ def banner(phase):
     d.text((822, 360), 'ENGINEERING / LEARNING / DELIVERY', fill='#9fb5d4', font=font(10, mono=True))
     return image
 
+banner(0).save(ROOT/'static/img/profile-banner.png', optimize=True)
 frames = [banner(2*math.pi*i/32).quantize(colors=96) for i in range(32)]
 frames[0].save(ROOT/'static/img/profile-banner.gif', save_all=True, append_images=frames[1:], duration=160, loop=0, optimize=True, disposal=1)
 image = Image.new('RGB', (512, 512), NAVY)

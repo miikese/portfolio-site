@@ -50,15 +50,16 @@ var skillGroups = []SkillGroup{
 
 var education = []EduEntry{
 	{Period: "Present", Title: "Software Development Programme", Org: "LEEF Centre, Otukpo", Detail: "A project-based Go and Python curriculum: building command-line tools, HTTP services, and practical applications while developing stronger problem-solving habits."},
+	{Period: "National Diploma", Title: "Civil Engineering Technology", Org: "Federal Polytechnic, Nasarawa", Detail: "An engineering qualification that forms part of my background alongside my current software development studies."},
 }
 
 func portfolioData() PageData {
 	return PageData{
 		Name: "Michael Ikese Emmanuel", RoleTag: "Software engineer & programmer",
-		Headline: "Engineering ideas.", HeadlineAccent: "Learning what's next.",
-		SubHeadline: "I turn problems into practical software with Go, Python, and the web. A cybersecurity enthusiast with a builder's mindset, ready to contribute and learn wherever the work takes me.",
-		AvatarURL:   "/static/img/profile-mark.png", CVPath: "/static/cv/resume.pdf",
-		Bio:         "I'm Michael, a software engineer and programmer based in Nigeria. My projects range from browser infrastructure and backend services to study platforms and Python tools. I enjoy understanding how systems work, making interfaces clear, and testing the details. I'm also a project manager in training, developing the planning and communication skills that connect ideas to delivery. Cybersecurity is an area I'm actively exploring, with a growing interest in how thoughtful engineering makes software safer.",
+		Headline: "Useful software.", HeadlineAccent: "Thoughtful engineering.",
+		SubHeadline: "I'm Michael Ikese Emmanuel, a software engineer based in Nigeria. I build practical tools and web applications with Go, Python, and TypeScript — with care for the people using them and the systems behind them.",
+		AvatarURL:   "/static/img/portrait.png", CVPath: "/static/cv/resume.pdf",
+		Bio:         "I build software to solve everyday problems, from a browser platform with isolated sessions to a study interface and a campus resource manager. I enjoy connecting a clear interface to dependable backend logic, testing edge cases, and documenting how things work. Alongside my software development studies at LEEF Centre, Otukpo, I'm training in project management and exploring cybersecurity fundamentals. I'm looking for opportunities to contribute, learn from others, and grow through meaningful work.",
 		SkillGroups: skillGroups, Projects: projects, Education: education,
 		Contact: Contact{Email: "emmanlemichel2019@gmail.com", GitHub: "https://github.com/miikese", Phone: "08160345977", PhoneURL: "+2348160345977", Based: "Nigeria"},
 	}

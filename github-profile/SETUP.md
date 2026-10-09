@@ -6,7 +6,7 @@ The custom banner, motion graphic, monogram, and CV are hosted in the public por
 ## Account fields
 
 - Name: Michael Ikese Emmanuel
-- Bio: Software engineer & programmer | Project manager in training | Cybersecurity enthusiast | Go, Python & web | Open to work and learning.
+- Bio: Software engineer | Go, Python & TypeScript | ND, Civil Engineering Technology | Project management trainee | Open to work
 - Location: Nigeria
 - Website: use the real public portfolio URL when deployed; a localhost address is not a public website.
 - Social links: GitHub `@miikese`; add other accounts only after their exact handles are supplied.
@@ -22,7 +22,7 @@ Keep the other private project repositories private.
 Recommended public pins: `portfolio-site`, `past-quest-solver`, and `Smile-student-` (if you want to show the progression from an early prototype).
 Feature the private projects as written summaries in the README rather than broken public links.
 
-The portfolio uses the new `miikese` monogram as requested. `static/img/profile-mark.svg` and `profile-mark.png` provide an original monogram option for account branding.
+The portfolio now uses an edited professional portrait based on Michael's original photo. Upload `static/img/portrait.png` as the GitHub account avatar. The site uses this portrait with subtle motion, a pause control, and reduced-motion support. `static/img/profile-mark.svg` and `profile-mark.png` remain available for monogram branding.
 
 ## Design sources
 

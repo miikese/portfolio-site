@@ -1,17 +1,19 @@
 <picture>
-  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/miikese/portfolio-site/main/static/img/profile-banner.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="https://raw.githubusercontent.com/miikese/portfolio-site/main/static/img/profile-banner.png">
   <img src="https://raw.githubusercontent.com/miikese/portfolio-site/main/static/img/profile-banner.gif" alt="Michael Ikese Emmanuel — Software engineer, programmer, project manager in training, and cybersecurity enthusiast" width="1200">
 </picture>
 
 # Hi, I'm Michael Ikese Emmanuel.
 
+<img src="https://raw.githubusercontent.com/miikese/portfolio-site/main/static/img/portrait.png" alt="Michael Ikese Emmanuel — edited professional portrait" width="160" align="right">
+
 **Software engineer & programmer · Project manager in training · Cybersecurity enthusiast**
 
-I build practical software with **Go, Python, and web technologies**. I enjoy understanding how systems work, turning problems into useful applications, and improving the details through testing and feedback.
+I’m a software engineer based in **Nigeria**, building practical tools and web applications with **Go, Python, and TypeScript**. My work connects clear interfaces to dependable backend logic, with attention to testing, documentation, and the people using the result.
 
-Alongside engineering, I'm developing my project management skills: defining scope, planning tasks, tracking risks, communicating progress, and learning how to guide work toward a clear outcome. Cybersecurity is a growing interest, especially the boundaries, permissions, and design decisions that help make software safer.
+I'm studying software development at **LEEF Centre, Otukpo**, training in project management, and exploring cybersecurity fundamentals. My projects give me practical reasons to think about access controls, session isolation, and data integrity.
 
-Based in **Nigeria**, I'm open to remote opportunities, collaboration, mentorship, and roles that introduce me to technologies I haven't worked with yet. I bring curiosity, a willingness to ask questions, and the effort to learn while contributing.
+**Open to work, remote collaboration, and mentorship.** I'm happy to learn a new stack and contribute while growing with a team.
 
 [Explore my portfolio source](https://github.com/miikese/portfolio-site) · [Download my CV](https://github.com/miikese/portfolio-site/raw/refs/heads/main/static/cv/resume.pdf) · [Get in touch](mailto:emmanlemichel2019@gmail.com)
 
@@ -33,19 +35,13 @@ Private projects are described at a high level. Their source remains private.
 - **Developing through project management training:** scope and requirements, task planning, prioritization, risk and issue tracking, stakeholder communication, progress reporting, and Agile and Scrum fundamentals.
 - **Exploring next:** cybersecurity fundamentals, secure software design, networking, PostgreSQL, and new languages and frameworks.
 
-## How I approach the work
+## Education & direction
 
-**Understand the problem.** Ask questions, identify constraints, and clarify the expected outcome.
+- **Software Development Programme** — LEEF Centre, Otukpo · Ongoing
+- **National Diploma in Civil Engineering Technology** — Federal Polytechnic, Nasarawa
+- **Project management** — In training, alongside my engineering projects
 
-**Build something useful.** Write clear code, check the edge cases, and document how to run it.
-
-**Keep learning.** Take feedback seriously, improve the result, and learn what the next challenge needs.
-
-## Learning & opportunities
-
-I'm studying software development at **LEEF Centre, Otukpo**, through a project-based Go and Python curriculum, and continuing my project management training.
-
-I'm interested in software engineering, programming, and project coordination opportunities with room to learn. If your stack is different from mine, I'm still interested in the conversation.
+I'm interested in software engineering, programming, and project coordination opportunities with room to contribute and learn.
 
 ## Connect with me
 

@@ -44,7 +44,7 @@ line(data["contact"], size=8.8, color=MUTED, leading=14)
 line(data["location"], size=8.4, color=MUTED, leading=14)
 section("Profile")
 paragraph(data["summary"])
-section("Skills & development")
+section("Technical skills & professional development")
 for label, value in data["skills"]:
     paragraph(label + ": " + value, size=9.1, leading=13)
 section("Selected projects")
@@ -53,11 +53,18 @@ for project in data["projects"]:
     paragraph(project["stack"], size=8.0, color=BLUE, leading=12)
     paragraph(project["description"], size=9.1, leading=13)
     y -= 8
-section("Education & ongoing learning")
-line(data["education"], size=9.4, bold=True, leading=15)
-paragraph(data["education_detail"], size=9.1, leading=13)
-y -= 9
-paragraph(data["availability"], size=8.7, color=MUTED, leading=12)
+section("Education")
+for entry in data["education"]:
+    line(entry["title"], size=10.0, bold=True, leading=15)
+    if entry["institution"] or entry["period"]:
+        line(" | ".join(v for v in [entry["institution"], entry["period"]] if v), size=8.8, color=BLUE, leading=14)
+    if entry["detail"]:
+        paragraph(entry["detail"], size=9.1, leading=13)
+    y -= 6
+section("Reference")
+for referee in data["referees"]:
+    line(referee["name"], size=9.4, bold=True, leading=15)
+    line("Phone: " + referee["phone"], size=9.1, color=MUTED, leading=13)
 if y < 44:
     raise SystemExit(f"CV overflows its page (remaining y={y}); shorten the content.")
 

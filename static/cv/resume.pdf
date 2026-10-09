@@ -16,7 +16,7 @@ endobj
 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
 endobj
 6 0 obj
-<< /Length 5278 >>
+<< /Length 4739 >>
 stream
 BT /F2 24 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 793.0 Tm (Michael Ikese Emmanuel) Tj ET
 BT /F1 10.2 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 762.0 Tm (Software Engineer & Programmer | Project Manager in Training) Tj ET
@@ -24,45 +24,44 @@ BT /F1 8.8 Tf 0.31 0.37 0.43 rg 1 0 0 1 44 742.0 Tm (emmanlemichel2019@gmail.com
 BT /F1 8.4 Tf 0.31 0.37 0.43 rg 1 0 0 1 44 728.0 Tm (Nigeria | Open to remote opportunities, collaboration, and on-the-job learning) Tj ET
 BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 702.0 Tm (PROFILE) Tj ET
 0.14 0.31 0.81 RG 0.5 w 44 692.0 m 551 692.0 l S
-BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 681.0 Tm (Software engineer and programmer building practical applications with Go, Python, and web technologies.) Tj ET
-BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 668.0 Tm (Project manager in training, developing planning, communication, and delivery skills. Cybersecurity) Tj ET
-BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 655.0 Tm (enthusiast exploring secure software design. Open to unfamiliar technologies, mentorship, and) Tj ET
-BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 642.0 Tm (opportunities to learn while contributing.) Tj ET
-BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 617.0 Tm (SKILLS & DEVELOPMENT) Tj ET
+BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 681.0 Tm (Software engineer based in Nigeria, building practical applications with Go, Python, and TypeScript.) Tj ET
+BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 668.0 Tm (Background includes a National Diploma in Civil Engineering Technology. Developing project management) Tj ET
+BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 655.0 Tm (skills alongside software studies, with an interest in secure software design. Open to work, mentorship,) Tj ET
+BT /F1 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 642.0 Tm (and learning a new stack.) Tj ET
+BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 617.0 Tm (TECHNICAL SKILLS & PROFESSIONAL DEVELOPMENT) Tj ET
 0.14 0.31 0.81 RG 0.5 w 44 607.0 m 551 607.0 l S
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 596.0 Tm (Languages & interfaces: Go, Python, JavaScript, TypeScript, HTML, CSS, React, Tailwind CSS) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 583.0 Tm (Backend & workflow: net/http, html/template, SQLite, WebSocket, JSON, Git, Linux, Bash, unit testing) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 570.0 Tm (Management training: Scope and requirements, task planning, prioritization, risk tracking, stakeholder) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 557.0 Tm (communication, progress reporting, Agile and Scrum fundamentals) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 544.0 Tm (Learning interests: Cybersecurity fundamentals, secure software design, networking, PostgreSQL) Tj ET
-BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 519.0 Tm (SELECTED PROJECTS) Tj ET
-0.14 0.31 0.81 RG 0.5 w 44 509.0 m 551 509.0 l S
-BT /F2 10.5 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 498.0 Tm (Global Browser) Tj ET
-BT /F1 8.0 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 483.0 Tm (Go | Chromium | WebSocket | SQLite | Linux | Private source) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 471.0 Tm (Built a working browser-platform MVP with isolated Chromium sessions and a web viewer. Includes) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 458.0 Tm (authentication, account roles, session quotas, persistent account data, destination checks, and session) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 445.0 Tm (cleanup.) Tj ET
-BT /F2 10.5 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 424.0 Tm (Smile Learning) Tj ET
-BT /F1 8.0 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 409.0 Tm (React | TypeScript | Vite | Tailwind CSS | github.com/miikese/past-quest-solver) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 397.0 Tm (Developed a responsive interface for exploring past exam questions and answers. Organized reusable) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 384.0 Tm (question cards, subject views, and search and filtering controls around static and mock study data.) Tj ET
-BT /F2 10.5 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 363.0 Tm (Campus Resource Manager) Tj ET
-BT /F1 8.0 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 348.0 Tm (Python | JSON | unittest | Private source) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 336.0 Tm (Implemented a menu-driven campus inventory application with borrowing, returns, search, and reports.) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 323.0 Tm (Validates requests before changing records; includes JSON persistence, demonstrations, and regression) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 310.0 Tm (tests.) Tj ET
-BT /F2 10.5 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 289.0 Tm (Engineering Portfolio) Tj ET
-BT /F1 8.0 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 274.0 Tm (Go | HTML | CSS | JavaScript | github.com/miikese/portfolio-site) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 262.0 Tm (Built a server-rendered portfolio delivered as one Go binary. Includes accessible project pages,) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 249.0 Tm (shareable search filters, light and dark themes, security headers, route tests, and container) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 236.0 Tm (configuration.) Tj ET
-BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 203.0 Tm (EDUCATION & ONGOING LEARNING) Tj ET
-0.14 0.31 0.81 RG 0.5 w 44 193.0 m 551 193.0 l S
-BT /F2 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 182.0 Tm (Software Development Programme | LEEF Centre, Otukpo | Present) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 167.0 Tm (Project-based Go and Python curriculum covering command-line tools, HTTP services, and practical) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 154.0 Tm (software development. Ongoing project management training focuses on planning, coordination, and) Tj ET
-BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 141.0 Tm (delivery.) Tj ET
-BT /F1 8.7 Tf 0.31 0.37 0.43 rg 1 0 0 1 44 119.0 Tm (Open to software engineering, programming, and project coordination opportunities with room to learn.) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 596.0 Tm (Programming & interfaces: Go, Python, JavaScript, TypeScript, HTML, CSS, React, Tailwind CSS) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 583.0 Tm (Backend & delivery: net/http, html/template, SQLite, WebSocket, JSON, Git, Linux, Bash, unit testing) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 570.0 Tm (Management training: Requirements, task planning, prioritization, risk tracking, stakeholder) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 557.0 Tm (communication, progress reporting, Agile fundamentals) Tj ET
+BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 532.0 Tm (SELECTED PROJECTS) Tj ET
+0.14 0.31 0.81 RG 0.5 w 44 522.0 m 551 522.0 l S
+BT /F2 10.5 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 511.0 Tm (Global Browser) Tj ET
+BT /F1 8.0 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 496.0 Tm (Go | Chromium | WebSocket | SQLite | Linux | Private source) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 484.0 Tm (Built a working browser-platform MVP with isolated Chromium sessions and a web viewer. Includes) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 471.0 Tm (authentication, account roles, session quotas, persistent account data, destination checks, and session) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 458.0 Tm (cleanup.) Tj ET
+BT /F2 10.5 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 437.0 Tm (Smile Learning) Tj ET
+BT /F1 8.0 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 422.0 Tm (React | TypeScript | Vite | Tailwind CSS | github.com/miikese/past-quest-solver) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 410.0 Tm (Developed a responsive interface for exploring past exam questions and answers. Organized reusable) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 397.0 Tm (question cards, subject views, and search and filtering controls around static and mock study data.) Tj ET
+BT /F2 10.5 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 376.0 Tm (Campus Resource Manager) Tj ET
+BT /F1 8.0 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 361.0 Tm (Python | JSON | unittest | Private source) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 349.0 Tm (Implemented a menu-driven campus inventory application with borrowing, returns, search, and reports.) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 336.0 Tm (Validates requests before changing records; includes JSON persistence, demonstrations, and regression) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 323.0 Tm (tests.) Tj ET
+BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 290.0 Tm (EDUCATION) Tj ET
+0.14 0.31 0.81 RG 0.5 w 44 280.0 m 551 280.0 l S
+BT /F2 10.0 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 269.0 Tm (Software Development Programme) Tj ET
+BT /F1 8.8 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 254.0 Tm (LEEF Centre, Otukpo | Present) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 240.0 Tm (Project-based Go and Python curriculum covering command-line tools, HTTP services, and practical) Tj ET
+BT /F1 9.1 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 227.0 Tm (software development.) Tj ET
+BT /F2 10.0 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 208.0 Tm (National Diploma in Civil Engineering Technology) Tj ET
+BT /F1 8.8 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 193.0 Tm (Federal Polytechnic, Nasarawa) Tj ET
+BT /F2 9.3 Tf 0.14 0.31 0.81 rg 1 0 0 1 44 161.0 Tm (REFERENCE) Tj ET
+0.14 0.31 0.81 RG 0.5 w 44 151.0 m 551 151.0 l S
+BT /F2 9.4 Tf 0.09 0.15 0.22 rg 1 0 0 1 44 140.0 Tm (Felicial Igbe Godwin) Tj ET
+BT /F1 9.1 Tf 0.31 0.37 0.43 rg 1 0 0 1 44 125.0 Tm (Phone: 09033361436) Tj ET
 endstream
 endobj
 7 0 obj
@@ -83,11 +82,11 @@ xref
 0000000279 00000 n 
 0000000376 00000 n 
 0000000478 00000 n 
-0000005808 00000 n 
-0000005977 00000 n 
-0000006124 00000 n 
+0000005269 00000 n 
+0000005438 00000 n 
+0000005585 00000 n 
 trailer
 << /Size 10 /Root 1 0 R /Info 7 0 R >>
 startxref
-6264
+5725
 %%EOF

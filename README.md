@@ -19,7 +19,7 @@ Open http://localhost:8080. The site includes a homepage, a searchable project d
 - **Profile, contact details, skills, education:** edit `portfolioData`, `skillGroups`, and `education` in `content.go`.
 - **Projects:** edit the `projects` slice in `content.go`. Use a unique URL-safe `Slug`, a `Title`, a `Category`, a description, and a technology stack. `Featured: true` includes a project on the homepage.
 - **Links:** supply the actual repository in `RepoURL`, a suitable `SourceLabel`, and an optional `DemoURL`. The public collection is curated; small exercises and unimplemented concepts are omitted.
-- **Branding:** `static/img/profile-mark.png` is the original miikese logo used on the homepage; the matching SVG and custom profile banner are under `static/img/`. The previous portrait remains available at `static/img/avatar.jpg`.
+- **Portrait and branding:** the homepage uses `static/img/portrait.png`, an AI-assisted professional portrait based on Michael's original photo, with a navy background coordinated with the site. Visitors can pause its subtle motion. The monogram and custom profile banners remain under `static/img/`.
 - **CV:** edit `cv/content.json`, then run `python3 scripts/build-cv.py`. This generates a selectable-text, single-page A4 PDF using only the Python standard library.
 - **Design:** edit `static/css/style.css`; shared navigation and metadata live in `templates/shared.html`.
 - **Categories:** the project filter derives its categories from the content automatically. Private entries have a written overview and no public source link.
@@ -85,7 +85,7 @@ templates/project.html     Project detail
 templates/error.html       Accessible 404 page
 static/css/style.css       Responsive light/dark design
 static/js/theme.js         Theme initialization before first paint
-static/js/main.js          Mobile menu, theme switch, project filters
+static/js/main.js          Mobile menu, theme, filters, and motion controls
 static/img/                Custom logo, banners, original portrait, and favicon
 static/cv/resume.pdf        Downloadable CV
 .github/workflows/ci.yml    Automated verification
@@ -98,7 +98,7 @@ The layout includes keyboard focus styles, a skip link, labeled search controls,
 
 `github-profile/README.md` is the prepared GitHub profile introduction, project showcase, training focus, and verified contact information. `github-profile/SETUP.md` records account fields, profile visibility, and suggested pins.
 
-The original banner and logo share the site design. Run `python3 scripts/build-profile-graphics.py` to rebuild the GIF and PNG assets; this optional script requires Pillow and the DejaVu fonts. The site has no runtime Python dependency. The SVG sources can be edited directly. The homepage uses lightweight entrance and hover motion, with a reduced-motion override.
+The original banner and logo share the site design. Run `python3 scripts/build-profile-graphics.py` to rebuild the GIF and PNG graphics; this optional script requires Pillow and the DejaVu fonts. The site has no runtime Python dependency. The SVG sources can be edited directly. The homepage uses lightweight entrance, portrait, and orbit motion, with an explicit pause control and a reduced-motion override. Social previews use the static PNG banner for compatibility.
 
 Project search accepts shareable `q`, `category`, and `collection` query parameters. With JavaScript disabled, every project remains visible and navigation and contact links still work.
 

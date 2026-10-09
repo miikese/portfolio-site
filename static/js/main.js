@@ -35,6 +35,23 @@
     updateThemeLabel();
   });
 
+  const portrait = document.querySelector('[data-portrait]');
+  if (portrait) {
+    const motion = portrait.querySelector('[data-motion-toggle]');
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    let paused = false;
+    const updateMotion = () => {
+      const stopped = paused || reducedMotion.matches;
+      portrait.classList.toggle('motion-paused', stopped);
+      motion.hidden = reducedMotion.matches;
+      motion.setAttribute('aria-pressed', String(stopped));
+      motion.textContent = stopped ? 'Play motion' : 'Pause motion';
+    };
+    motion.addEventListener('click', () => { paused = !paused; updateMotion(); });
+    reducedMotion.addEventListener('change', updateMotion);
+    updateMotion();
+  }
+
   const filters = document.querySelector('[data-project-filters]');
   if (!filters) return;
   filters.hidden = false;
