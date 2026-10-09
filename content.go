@@ -5,7 +5,7 @@ package main
 // The public collection includes implemented work and the requested TalentGrid project in development.
 var projects = []Project{
 	{
-		Slug: "smartconvert", Title: "SmartConvert", RepoName: "SmileConvert",
+		Slug: "smartconvert", Title: "SmartConvert", RepoName: "smartconvert",
 		Category: "Web applications", Featured: true, Status: "Tested demo MVP", Visibility: "Private source",
 		Blurb: "A booking-slip translation workspace that compares selection meaning, explains uncertain matches, and asks for review before export.",
 		Focus: "Go + Python orchestration · semantic matching", Outcome: "A locally runnable hybrid application with verified demo exports and persistent review receipts.",
