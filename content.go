@@ -5,6 +5,18 @@ package main
 // The public collection includes implemented work and the requested TalentGrid project in development.
 var projects = []Project{
 	{
+		Slug: "mindgrow", Title: "MindGrow", RepoName: "mindgrow",
+		Category: "Web applications", Featured: true, Status: "Working MVP · in development", Visibility: "Public source",
+		Blurb: "An educational gaming and brain-training platform for children learning programming and problem-solving, with relaxed memory, logic and reasoning activities for teenagers and adults.",
+		Focus: "Playable learning · private progress", Outcome: "Eight playable activities with visual coding, introductory HTML/CSS challenges and private guardian-owned learning history. The full programming curriculum remains in development.",
+		Bullets: []string{"Play memory pairs, patterns, number sequences, a robot maze, introductory Sudoku and word puzzles with hints and untimed practice.", "Build movement and repeat programs in Blockly, execute them safely, and practice HTML/CSS with a sandboxed live preview.", "Choose age-appropriate paths, track practice through private nickname profiles, and receive rules-based recommendations.", "Resume device-local games, use calm mode and accessible controls, and delete learner profiles and progress. No public child profiles or intelligence claims."},
+		Stack:   []string{"React", "TypeScript", "Blockly", "Cloudflare Workers", "D1 / SQLite"},
+		RepoURL: "https://github.com/miikese/mindgrow", SourceLabel: "View source",
+		ScreenshotWidth: 1440, ScreenshotHeight: 1439, ScreenshotURL: "/static/img/projects/mindgrow.png", ScreenshotAlt: "MindGrow learning dashboard with playable memory, logic and coding activities",
+		DemoURL: "https://mindgrow.readyloom3.chatgpt.site", DemoLabel: "Hosted MVP · sign-in required ↗",
+	},
+
+	{
 		Slug: "benue-street-locator", Title: "Benue Street Locator", RepoName: "benue-street-locator",
 		Category: "Web applications", Featured: true, Status: "Working MVP · in development", Visibility: "Public source",
 		Blurb: "An interactive mapping and location-discovery platform for Benue State, starting with Otukpo. Explore streets, landmarks and public places, share locations and contribute local knowledge.",
@@ -12,7 +24,7 @@ var projects = []Project{
 		Bullets: []string{"Search local names, aliases and landmarks with typo tolerance, category/LGA filters and nearby straight-line sorting.", "Explore Leaflet maps, save places, and share private pins or directory locations through links, WhatsApp and QR codes.", "Submit public places and corrections privately, follow their review history, and publish approved places through moderator review.", "Open external directions; in-app driving routes require a configured OSRM provider. Low-data mode pauses map tiles and cached public details work offline."},
 		Stack:   []string{"React", "TypeScript", "Leaflet", "Cloudflare Workers", "D1 / SQLite", "R2"},
 		RepoURL: "https://github.com/miikese/benue-street-locator", SourceLabel: "View source",
-		ScreenshotURL: "/static/img/projects/benue-street-locator.png", ScreenshotAlt: "Benue Street Locator showing place search and the OpenStreetMap of Otukpo",
+		ScreenshotWidth: 1440, ScreenshotHeight: 1110, ScreenshotURL: "/static/img/projects/benue-street-locator.png", ScreenshotAlt: "Benue Street Locator showing place search and the OpenStreetMap of Otukpo",
 		DemoURL: "https://benue-street-locator.readyloom3.chatgpt.site", DemoLabel: "Hosted MVP · sign-in required ↗",
 	},
 

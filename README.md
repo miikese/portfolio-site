@@ -106,8 +106,8 @@ See [project selection](docs/project-selection.md) for the content review and [r
 
 ## Mapping, learning and community MVPs
 
-The existing collection now includes Benue Street Locator with its real application
-screenshot, implemented features, technology badges, source link and accurate
+The existing collection now includes Benue Street Locator and MindGrow with real application
+screenshots, implemented features, technology badges, source link and accurate
 "Working MVP · in development" status. All original projects remain in the
 collection. Hosted project demo links require ChatGPT sign-in and permitted access.
 A GitHub push is not confirmation that a hosted application or this portfolio

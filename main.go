@@ -27,6 +27,7 @@ type Project struct {
 	Bullets, Stack                               []string
 	RepoURL, SourceLabel, DemoURL                string
 	ScreenshotURL, ScreenshotAlt, DemoLabel      string
+	ScreenshotWidth, ScreenshotHeight            int
 	Featured                                     bool
 	RepoName, Status, Visibility, Focus, Outcome string
 }

@@ -47,7 +47,7 @@
 {{define "project-card"}}
 <article class="project-card" data-project-card data-category="{{.Category}}" data-featured="{{.Featured}}" data-visibility="{{.Visibility}}">
   <div class="card-top"><span class="eyebrow">{{.Category}}</span><span class="project-status">{{.Status}}</span></div>
-  {{if .ScreenshotURL}}<a class="project-screenshot" href="/projects/{{.Slug}}"><img src="{{.ScreenshotURL}}" alt="{{.ScreenshotAlt}}" loading="lazy" decoding="async" width="1440" height="1110"></a>{{else}}
+  {{if .ScreenshotURL}}<a class="project-screenshot" href="/projects/{{.Slug}}"><img src="{{.ScreenshotURL}}" alt="{{.ScreenshotAlt}}" loading="lazy" decoding="async" width="{{.ScreenshotWidth}}" height="{{.ScreenshotHeight}}"></a>{{else}}
   <div class="card-visual visual-{{.Slug}}" aria-hidden="true"><span>{{if eq .Category "Systems & infrastructure"}}[ ↗ ]{{else if eq .Category "Web applications"}}&lt; / &gt;{{else if eq .Category "CLI tools"}}&gt;_{{else if eq .Category "HTTP services"}}{ : }{{else}}+ +{{end}}</span><small>{{.Focus}}</small></div>{{end}}
   <h3><a href="/projects/{{.Slug}}">{{.Title}}</a></h3>
   <p>{{.Blurb}}</p>
