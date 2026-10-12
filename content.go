@@ -5,6 +5,18 @@ package main
 // The public collection includes implemented work and the requested TalentGrid project in development.
 var projects = []Project{
 	{
+		Slug: "community-connect", Title: "CommunityConnect", RepoName: "community-connect",
+		Category: "Web applications", Featured: true, Status: "Working MVP · in development", Visibility: "Public source",
+		Blurb: "A community development platform where residents report local issues, coordinate volunteers, discover opportunities and share skills to help improve their communities.",
+		Focus: "Community reporting · accountable participation", Outcome: "A tested community-coordination MVP with moderated reporting and real activity counts. Public boards start empty and community review does not imply official government action.",
+		Bullets: []string{"Submit private pending reports, follow reviewed issues from acknowledgement to resolution, and view status history and notifications.", "Register reviewed organizations, publish opportunities and enroll volunteers with ownership and deadline checks.", "Discover skills offers, jobs, training, scholarships, events and nonfinancial support through moderated community boards.", "Use approximate public locations, flag abuse, export aggregate counts, download event calendars and delete account data."},
+		Stack:   []string{"React", "TypeScript", "Leaflet", "Cloudflare Workers", "D1 / SQLite", "R2"},
+		RepoURL: "https://github.com/miikese/community-connect", SourceLabel: "View source",
+		ScreenshotWidth: 1440, ScreenshotHeight: 1603, ScreenshotURL: "/static/img/projects/community-connect.png", ScreenshotAlt: "CommunityConnect dashboard with community issue reporting and opportunity discovery",
+		DemoURL: "https://community-connect.readyloom3.chatgpt.site", DemoLabel: "Hosted MVP · sign-in required ↗",
+	},
+
+	{
 		Slug: "mindgrow", Title: "MindGrow", RepoName: "mindgrow",
 		Category: "Web applications", Featured: true, Status: "Working MVP · in development", Visibility: "Public source",
 		Blurb: "An educational gaming and brain-training platform for children learning programming and problem-solving, with relaxed memory, logic and reasoning activities for teenagers and adults.",

@@ -155,7 +155,7 @@ func TestProjectCollectionIntegrity(t *testing.T) {
 		if p.ScreenshotURL == "" {
 			continue
 		}
-		if p.ScreenshotAlt == "" || p.RepoURL == "" || p.Status == "" || len(p.Bullets) == 0 || len(p.Stack) == 0 {
+		if p.ScreenshotAlt == "" || p.ScreenshotWidth < 1 || p.ScreenshotHeight < 1 || p.RepoURL == "" || p.Status == "" || len(p.Bullets) == 0 || len(p.Stack) == 0 {
 			t.Errorf("incomplete screenshot project %s", p.Slug)
 		}
 		image := httptest.NewRecorder()

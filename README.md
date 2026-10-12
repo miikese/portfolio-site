@@ -106,7 +106,7 @@ See [project selection](docs/project-selection.md) for the content review and [r
 
 ## Mapping, learning and community MVPs
 
-The existing collection now includes Benue Street Locator and MindGrow with real application
+The existing collection now includes Benue Street Locator, MindGrow and CommunityConnect with real application
 screenshots, implemented features, technology badges, source link and accurate
 "Working MVP · in development" status. All original projects remain in the
 collection. Hosted project demo links require ChatGPT sign-in and permitted access.

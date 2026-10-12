@@ -317,3 +317,5 @@ input::placeholder { color: var(--muted); opacity: 1; }
 .detail-screenshot { margin: 0 0 40px; }
 .detail-screenshot img { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
 .detail-screenshot figcaption { margin-top: 12px; color: var(--muted); font-size: .78rem; }
+/* Keep long project names readable within narrow detail pages. */
+.project-detail .page-heading h1 { font-size: clamp(1.9rem, 8vw, 4.7rem); overflow-wrap: anywhere; }

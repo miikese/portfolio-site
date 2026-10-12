@@ -40,3 +40,25 @@ checks against the production binary. Source links were verified through GitHub.
   original projects preserved. Responsive checks pass at 320/390/768/1440px.
 - Hosted version 3 was saved from this exact pushed commit. Deployment is tracked
   separately; saving a version alone is not confirmation of publication.
+
+MindGrow publication update: the first attempt failed with the Sites error
+"Completion token has already been consumed". A retry of the same saved version
+succeeded on 12 October 2026. Version 3 serves commit
+5c6cf20a03483037e06ff079f944f39764872364 at
+https://mindgrow.readyloom3.chatgpt.site, preserving restricted access.
+
+## CommunityConnect checkpoint
+
+- The previously empty GitHub main branch now contains the independent MVP;
+  verified commit: 39e3928638762355fb628a08e4af4e24b874c420.
+- 28 rule/API tests, strict TypeScript, lint, both production builds and browser
+  report/moderation/volunteer/community-board journeys pass. GitHub CI succeeded.
+- Production audit: 0 findings. Full toolchain audit has 19 findings documented
+  in the project's docs/security.md; broad release still requires that review.
+- Hosted version 2 successfully deployed from this exact commit to
+  https://community-connect.readyloom3.chatgpt.site with existing access preserved.
+- Added accurate working-MVP status, implemented features, technology badges,
+  actual screenshot, verified source and restricted hosted-demo links.
+- Fixed mobile overflow of the long project name by scaling detail-page headings.
+- The collection now has nine entries: all six original projects plus the three
+  new MVPs. Advanced requirements remain in their separate product plans.
