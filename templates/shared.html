@@ -12,9 +12,9 @@
 {{if .CanonicalURL}}<link rel="canonical" href="{{.CanonicalURL}}"><meta property="og:url" content="{{.CanonicalURL}}">{{end}}
 {{if .SiteURL}}<meta property="og:image" content="{{.SiteURL}}/static/img/profile-banner.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="400"><meta property="og:image:alt" content="{{.Name}} — Software engineer and programmer">{{end}}
 <link rel="icon" href="/static/img/favicon.svg" type="image/svg+xml">
-<script src="/static/js/theme.js?v=20261009-3"></script>
-<link rel="stylesheet" href="/static/css/style.css?v=20261009-3">
-<script src="/static/js/main.js?v=20261009-3" defer></script>
+<script src="/static/js/theme.js?v=20261012-1"></script>
+<link rel="stylesheet" href="/static/css/style.css?v=20261012-1">
+<script src="/static/js/main.js?v=20261012-1" defer></script>
 {{end}}
 
 {{define "nav"}}
@@ -47,10 +47,12 @@
 {{define "project-card"}}
 <article class="project-card" data-project-card data-category="{{.Category}}" data-featured="{{.Featured}}" data-visibility="{{.Visibility}}">
   <div class="card-top"><span class="eyebrow">{{.Category}}</span><span class="project-status">{{.Status}}</span></div>
-  <div class="card-visual visual-{{.Slug}}" aria-hidden="true"><span>{{if eq .Category "Systems & infrastructure"}}[ ↗ ]{{else if eq .Category "Web applications"}}&lt; / &gt;{{else if eq .Category "CLI tools"}}&gt;_{{else if eq .Category "HTTP services"}}{ : }{{else}}+ +{{end}}</span><small>{{.Focus}}</small></div>
+  {{if .ScreenshotURL}}<a class="project-screenshot" href="/projects/{{.Slug}}"><img src="{{.ScreenshotURL}}" alt="{{.ScreenshotAlt}}" loading="lazy" decoding="async" width="1440" height="1110"></a>{{else}}
+  <div class="card-visual visual-{{.Slug}}" aria-hidden="true"><span>{{if eq .Category "Systems & infrastructure"}}[ ↗ ]{{else if eq .Category "Web applications"}}&lt; / &gt;{{else if eq .Category "CLI tools"}}&gt;_{{else if eq .Category "HTTP services"}}{ : }{{else}}+ +{{end}}</span><small>{{.Focus}}</small></div>{{end}}
   <h3><a href="/projects/{{.Slug}}">{{.Title}}</a></h3>
   <p>{{.Blurb}}</p>
   <div class="tags" aria-label="Technologies">{{range .Stack}}<span class="tag">{{.}}</span>{{end}}</div>
-  <a class="text-link" href="/projects/{{.Slug}}" aria-label="Explore {{.Title}}">View overview <span aria-hidden="true">→</span></a>
+  {{if .ScreenshotURL}}<ul class="card-features">{{range .Bullets}}<li>{{.}}</li>{{end}}</ul>{{end}}
+  <div class="card-links"><a class="text-link" href="/projects/{{.Slug}}" aria-label="Explore {{.Title}}">View overview <span aria-hidden="true">→</span></a>{{if .RepoURL}}<a class="text-link" href="{{.RepoURL}}" target="_blank" rel="noopener noreferrer" aria-label="GitHub source for {{.Title}}">GitHub ↗</a>{{end}}{{if .DemoURL}}<a class="text-link" href="{{.DemoURL}}" target="_blank" rel="noopener noreferrer">{{if .DemoLabel}}{{.DemoLabel}}{{else}}Live demo ↗{{end}}</a>{{end}}</div>
 </article>
 {{end}}

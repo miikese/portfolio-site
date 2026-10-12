@@ -103,3 +103,24 @@ The original banner and logo share the site design. Run `python3 scripts/build-p
 Project search accepts shareable `q`, `category`, and `collection` query parameters. With JavaScript disabled, every project remains visible and navigation and contact links still work.
 
 See [project selection](docs/project-selection.md) for the content review and [refresh report](docs/refresh-report.md) for validation and delivery details.
+
+## Mapping, learning and community MVPs
+
+The existing collection now includes Benue Street Locator with its real application
+screenshot, implemented features, technology badges, source link and accurate
+"Working MVP · in development" status. All original projects remain in the
+collection. Hosted project demo links require ChatGPT sign-in and permitted access.
+A GitHub push is not confirmation that a hosted application or this portfolio
+has been redeployed.
+
+Browser validation against the production binary:
+
+```sh
+PORT=8085 ./portfolio
+# In another terminal with Python Playwright installed:
+python3 scripts/e2e.py
+```
+
+Set PLAYWRIGHT_CHROMIUM_EXECUTABLE to use a system Chrome. Browser checks cover
+search, filters, preserved projects, screenshot loading, detail navigation, themes,
+no-JavaScript content, and 320/390/768/1440px layouts.

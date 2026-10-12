@@ -133,3 +133,47 @@ func TestDiscoveryAndConfiguration(t *testing.T) {
 		t.Error("sitemap must require a configured origin")
 	}
 }
+
+// Guard the original collection while adding screenshot-backed project entries.
+func TestProjectCollectionIntegrity(t *testing.T) {
+	original := []string{"smartconvert", "global-browser", "past-quest-solver", "campus-resource-manager", "talentgrid", "portfolio-site"}
+	handler, err := newHandler("")
+	if err != nil {
+		t.Fatal(err)
+	}
+	r := httptest.NewRecorder()
+	handler.ServeHTTP(r, httptest.NewRequest("GET", "/projects", nil))
+	seen := map[string]bool{}
+	for _, p := range projects {
+		if seen[p.Slug] {
+			t.Fatalf("duplicate project slug %q", p.Slug)
+		}
+		seen[p.Slug] = true
+		if !strings.Contains(r.Body.String(), template.HTMLEscapeString(p.Title)) {
+			t.Errorf("missing card for %s", p.Slug)
+		}
+		if p.ScreenshotURL == "" {
+			continue
+		}
+		if p.ScreenshotAlt == "" || p.RepoURL == "" || p.Status == "" || len(p.Bullets) == 0 || len(p.Stack) == 0 {
+			t.Errorf("incomplete screenshot project %s", p.Slug)
+		}
+		image := httptest.NewRecorder()
+		handler.ServeHTTP(image, httptest.NewRequest("GET", p.ScreenshotURL, nil))
+		if image.Code != 200 || image.Header().Get("Content-Type") != "image/png" {
+			t.Errorf("unavailable application screenshot %s", p.ScreenshotURL)
+		}
+		detail := httptest.NewRecorder()
+		handler.ServeHTTP(detail, httptest.NewRequest("GET", "/projects/"+p.Slug, nil))
+		for _, required := range []string{p.ScreenshotURL, p.RepoURL, "in development", "Actual application screenshot"} {
+			if !strings.Contains(detail.Body.String(), required) {
+				t.Errorf("%s detail missing %q", p.Slug, required)
+			}
+		}
+	}
+	for _, slug := range original {
+		if !seen[slug] {
+			t.Errorf("original project removed: %s", slug)
+		}
+	}
+}

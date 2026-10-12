@@ -5,6 +5,18 @@ package main
 // The public collection includes implemented work and the requested TalentGrid project in development.
 var projects = []Project{
 	{
+		Slug: "benue-street-locator", Title: "Benue Street Locator", RepoName: "benue-street-locator",
+		Category: "Web applications", Featured: true, Status: "Working MVP · in development", Visibility: "Public source",
+		Blurb: "An interactive mapping and location-discovery platform for Benue State, starting with Otukpo. Explore streets, landmarks and public places, share locations and contribute local knowledge.",
+		Focus: "Mapping · search · reviewed contributions", Outcome: "A tested mapping MVP with a real OpenStreetMap base map, source-attributed directory and moderator-reviewed contributions. Directory coverage is still limited.",
+		Bullets: []string{"Search local names, aliases and landmarks with typo tolerance, category/LGA filters and nearby straight-line sorting.", "Explore Leaflet maps, save places, and share private pins or directory locations through links, WhatsApp and QR codes.", "Submit public places and corrections privately, follow their review history, and publish approved places through moderator review.", "Open external directions; in-app driving routes require a configured OSRM provider. Low-data mode pauses map tiles and cached public details work offline."},
+		Stack:   []string{"React", "TypeScript", "Leaflet", "Cloudflare Workers", "D1 / SQLite", "R2"},
+		RepoURL: "https://github.com/miikese/benue-street-locator", SourceLabel: "View source",
+		ScreenshotURL: "/static/img/projects/benue-street-locator.png", ScreenshotAlt: "Benue Street Locator showing place search and the OpenStreetMap of Otukpo",
+		DemoURL: "https://benue-street-locator.readyloom3.chatgpt.site", DemoLabel: "Hosted MVP · sign-in required ↗",
+	},
+
+	{
 		Slug: "smartconvert", Title: "SmartConvert", RepoName: "smartconvert",
 		Category: "Web applications", Featured: true, Status: "Tested demo MVP", Visibility: "Private source",
 		Blurb: "A booking-slip translation workspace that compares selection meaning, explains uncertain matches, and asks for review before export.",

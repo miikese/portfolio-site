@@ -26,6 +26,7 @@ type Project struct {
 	Slug, Title, Category, Blurb                 string
 	Bullets, Stack                               []string
 	RepoURL, SourceLabel, DemoURL                string
+	ScreenshotURL, ScreenshotAlt, DemoLabel      string
 	Featured                                     bool
 	RepoName, Status, Visibility, Focus, Outcome string
 }

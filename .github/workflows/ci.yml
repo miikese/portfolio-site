@@ -29,6 +29,25 @@ jobs:
         run: go test -race -cover ./...
       - name: Build single binary
         run: CGO_ENABLED=0 go build -trimpath -o portfolio .
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install browser checks
+        run: |
+          pip install playwright
+          python -m playwright install --with-deps chromium
+      - name: Check projects and responsive workflows
+        run: |
+          PORT=8085 ./portfolio > /tmp/portfolio-browser.log 2>&1 &
+          portfolio_pid=$!
+          trap 'kill "$portfolio_pid"' EXIT
+          curl --fail --retry 10 --retry-connrefused --retry-delay 1 http://127.0.0.1:8085/healthz
+          python scripts/e2e.py || { cat /tmp/portfolio-browser.log; exit 1; }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portfolio-browser-evidence
+          path: docs/screenshots/
       - name: Build production image
         run: docker build --tag portfolio:ci .
       - name: Smoke test production container

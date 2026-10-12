@@ -306,3 +306,14 @@ input::placeholder { color: var(--muted); opacity: 1; }
 @media (max-width: 760px) { .home-project-grid, .growth-band { grid-template-columns: 1fr; } .growth-band { gap: 28px; padding: 24px; margin-bottom: 24px; } }
 @media (prefers-reduced-motion: reduce) { .portrait-orbit { display: none; } .portrait-frame .portrait-stage img { animation: none !important; } }
 @media print { .motion-toggle, .portrait-orbit { display: none; } }
+
+/* Real application previews share the existing project-card design. */
+.project-screenshot { display: block; margin-bottom: 26px; border: 1px solid var(--line); background: var(--accent-soft); }
+.project-screenshot img { display: block; width: 100%; height: auto; }
+.card-features { padding-left: 1.2rem; color: var(--muted); font-size: .78rem; line-height: 1.7; margin: 20px 0 0; }
+.card-features li + li { margin-top: 8px; }
+.card-links { display: flex; flex-wrap: wrap; gap: 0 24px; margin-top: auto; }
+.card-links .text-link { gap: 12px; }
+.detail-screenshot { margin: 0 0 40px; }
+.detail-screenshot img { width: 100%; height: auto; display: block; border: 1px solid var(--line); }
+.detail-screenshot figcaption { margin-top: 12px; color: var(--muted); font-size: .78rem; }
