@@ -62,3 +62,18 @@ https://mindgrow.readyloom3.chatgpt.site, preserving restricted access.
 - Fixed mobile overflow of the long project name by scaling detail-page headings.
 - The collection now has nine entries: all six original projects plus the three
   new MVPs. Advanced requirements remain in their separate product plans.
+
+## 12 October 2026 — recovered after restart
+
+The original four checkouts survived; the unrelated Campus repository was left
+untouched. Benue's pending patch was backed up before recovery, then its runtime
+dependency updates and backlog listing regression passed clean-install validation.
+All three full browser journeys and the nine-card portfolio passed, including
+320/390/768/1440px layouts. Browser fixtures use separate databases through
+`APP_STATE_DIR`; normal preview data is retained. The portfolio now includes
+`scripts/open-local-projects.py` to reopen all four independent local applications.
+Runtime audits report zero findings; each full application toolchain reports 19
+findings, recorded in its security notes. Final push, CI and version/deployment
+results are recorded in `/home/student/projects/RECOVERY_REPORT.md` after delivery.
+No public portfolio host is configured in GitHub, so no hosted portfolio success
+is claimed. The existing app audience is preserved.

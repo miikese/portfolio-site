@@ -1,6 +1,6 @@
 # Michael Ikese Emmanuel — Portfolio
 
-A professional portfolio for Michael Ikese Emmanuel: software engineer and programmer, project manager in training, and cybersecurity enthusiast. The curated collection highlights Global Browser, Smile Learning, Campus Resource Manager, TalentGrid (in development), and this portfolio. It runs as a single Go binary with embedded templates and assets, with no frontend framework, package manager, or build step.
+A professional portfolio for Michael Ikese Emmanuel: software engineer and programmer, project manager in training, and cybersecurity enthusiast. The nine-project collection includes Benue Street Locator, MindGrow, CommunityConnect, SmartConvert, Global Browser, Smile Learning, Campus Resource Manager, TalentGrid (in development), and this portfolio. It runs as a single Go binary with embedded templates and assets, with no frontend framework, package manager, or build step.
 
 ## Run locally
 
@@ -124,3 +124,20 @@ python3 scripts/e2e.py
 Set PLAYWRIGHT_CHROMIUM_EXECUTABLE to use a system Chrome. Browser checks cover
 search, filters, preserved projects, screenshot loading, detail navigation, themes,
 no-JavaScript content, and 320/390/768/1440px layouts.
+
+## Reopen all four local projects after a restart
+
+With the three independent checkouts under `../projects/`, run:
+
+```sh
+python3 scripts/open-local-projects.py
+```
+
+This starts the portfolio at http://127.0.0.1:8085 and Benue, MindGrow and
+CommunityConnect at ports 3101, 3102 and 3103, then opens all four browser tabs.
+It builds missing previews, reuses healthy servers, and preserves application data.
+Use `--project-root /path/to/projects` for another checkout location, `--no-open`
+for terminal-only use, `--rebuild` after source changes, or `--stop` to stop only
+processes this launcher started. Logs and process records are ignored in
+`.local-state/`. Requires Go, Python 3, Node 22.13+ and npm; this is a Linux desktop
+launcher and does not deploy the portfolio or combine the repositories.
