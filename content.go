@@ -104,8 +104,16 @@ var projects = []Project{
 		Category: "Web applications", Featured: false, Status: "In development", Visibility: "Private source",
 		Blurb: "A sector-based talent directory that connects professional profiles, skills, and work experience with searchable discovery.",
 		Focus: "Talent discovery · relational data", Outcome: "An evolving Go and PostgreSQL application with profile, account, and talent-search handlers.",
-		Bullets: []string{"Current source includes registration, login, JWT authentication, and account-management handlers.", "Models sectors, skills, and work experience in PostgreSQL, with profile editing and filtered, paginated talent search.", "Includes a web interface and routes for contact requests and support-message storage.", "Source reviewed on 9 October 2026. Full database-backed runtime validation and production deployment have not been verified in this portfolio review."},
+		Bullets: []string{"Current source includes registration, login, JWT authentication, and account-management handlers.", "Models sectors, skills, and work experience in PostgreSQL, with profile editing and filtered, paginated talent search.", "Includes private contact requests, employer vacancies, applications and account-deactivation workflows. Search guards prevent delayed results from replacing a newer query.", "Search behavior was checked with isolated browser fixtures on 28 October 2026. Full database-backed runtime validation and production deployment were not repeated in this review."},
 		Stack:   []string{"Go", "PostgreSQL", "JWT", "HTML", "CSS", "JavaScript"},
+	},
+	{
+		Slug: "reachaid", Title: "ReachAid", RepoName: "ReachAid",
+		Category: "Web applications", Featured: false, Status: "Closed pilot · in development", Visibility: "Private source",
+		Blurb: "A location-aware directory prototype for discovering essential community services, with controlled account access and review workflows.",
+		Focus: "Service discovery · responsible information", Outcome: "An implemented Go and Next.js pilot with PostgreSQL and PostGIS. The public overview describes the software, not verified service availability or an open public launch.",
+		Bullets: []string{"Supports location-based service discovery, organization records and moderated information workflows.", "Keeps source code private and preserves the pilot's access controls.", "Real provider verification, production email delivery and operational release checks remain prerequisites for wider launch."},
+		Stack:   []string{"Go", "Next.js", "TypeScript", "PostgreSQL", "PostGIS"},
 	},
 	{
 		Slug: "portfolio-site", Title: "Engineering Portfolio", RepoName: "portfolio-site",

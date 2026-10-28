@@ -30,6 +30,7 @@ I'm studying software development at **LEEF Centre, Otukpo**, training in projec
 | [**Smile Learning**](https://github.com/miikese/past-quest-solver) | A responsive study interface with question cards, subject filters and search, using static and mock study data. | React, TypeScript, Vite |
 | **Campus Resource Manager** · Private source | Inventory, borrowing, returns and reports with validated JSON persistence; intended for one local operator. | Python, JSON, unittest |
 | **TalentGrid** · In development · Private source | Talent directory with account, profile, search and contact-request handlers. Database-backed runtime validation was not repeated in this portfolio review. | Go, PostgreSQL, JWT |
+| **ReachAid** · Closed pilot · Private source | Essential-services directory prototype with location-based discovery and controlled access. Provider verification and operational launch checks remain outstanding. | Go, Next.js, PostgreSQL, PostGIS |
 | **SmartConvert** · Demo · Private source | Booking-slip translation with fictitious adapters and explicit review before export. Real bookmaker integrations and live payments are unavailable. | Go, Python, FastAPI |
 | [**Engineering Portfolio**](https://github.com/miikese/portfolio-site) | Single-binary Go site with accessible project pages, shareable filters, responsive themes and route tests. | Go, HTML, CSS, JavaScript |
 

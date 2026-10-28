@@ -16,6 +16,7 @@ The collection is curated around substantial applications and tools. Small exerc
 | Smile Learning | Public `past-quest-solver` source; responsive study interface with static/mock question data. |
 | Campus Resource Manager | Existing private Python resource-management summary; validated local JSON persistence. |
 | TalentGrid | Existing private development overview. Database-backed runtime validation has not been repeated in this portfolio review. |
+| ReachAid | Private closed-pilot service-directory overview only. No source link, public registration invitation or claim of verified providers. |
 | Engineering Portfolio | Current Go source, embedded assets and HTTP test suite. |
 
 Four featured projects provide a shorter homepage; every substantial entry remains in the searchable collection. Cards show at most two feature bullets; full descriptions appear on detail pages. Collaboration roles are separate from ownership, and private entries retain empty public-source links. Existing screenshots are local captures and may predate the latest source changes.
