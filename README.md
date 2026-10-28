@@ -1,6 +1,6 @@
 # Michael Ikese Emmanuel — Portfolio
 
-A professional portfolio for Michael Ikese Emmanuel: software engineer and programmer, project manager in training, and cybersecurity enthusiast. The nine-project collection includes Benue Street Locator, MindGrow, CommunityConnect, SmartConvert, Global Browser, Smile Learning, Campus Resource Manager, TalentGrid (in development), and this portfolio. It runs as a single Go binary with embedded templates and assets, with no frontend framework, package manager, or build step.
+A professional portfolio for Michael Ikese Emmanuel: software engineer and programmer, project manager in training, and cybersecurity enthusiast. The eleven-project collection includes the Marvellous Motors collaboration with Otiti Mordecai Marvellous, CampusFlow, Benue Street Locator, MindGrow, CommunityConnect, SmartConvert, Global Browser, Smile Learning, Campus Resource Manager, TalentGrid (in development), and this portfolio. Four featured projects keep the homepage focused; the full collection preserves the other substantial work. It runs as a single Go binary with embedded templates and assets, with no frontend framework, package manager, or build step.
 
 ## Run locally
 
@@ -109,7 +109,7 @@ See [project selection](docs/project-selection.md) for the content review and [r
 The existing collection now includes Benue Street Locator, MindGrow and CommunityConnect with real application
 screenshots, implemented features, technology badges, source link and accurate
 "Working MVP · in development" status. All original projects remain in the
-collection. Hosted project demo links require ChatGPT sign-in and permitted access.
+collection. Hosted project demo links require ChatGPT sign-in and permitted access. Screenshot captions describe local captures; screenshots may predate the latest changes.
 A GitHub push is not confirmation that a hosted application or this portfolio
 has been redeployed.
 

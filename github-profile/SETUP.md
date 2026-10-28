@@ -19,7 +19,7 @@ At review time, `miikese/miikese` was private. The connected GitHub tools suppor
 Once the profile repository is public, its README can appear on the account overview.
 Keep the other private project repositories private.
 
-Recommended public pins: `portfolio-site`, `past-quest-solver`, and `Smile-student-` (if you want to show the progression from an early prototype).
+Recommended public pins: `portfolio-site`, `benue-street-locator`, `mindgrow`, `community-connect`, `past-quest-solver`, and `campusflow`. Credit Marvellous Motors as a collaboration with Mordecai in the README; its repository remains under her account.
 Feature the private projects as written summaries in the README rather than broken public links.
 
 The portfolio now uses an edited professional portrait based on Michael's original photo. Upload `static/img/portrait.png` as the GitHub account avatar. The site uses this portrait with subtle motion, a pause control, and reduced-motion support. `static/img/profile-mark.svg` and `profile-mark.png` remain available for monogram branding.

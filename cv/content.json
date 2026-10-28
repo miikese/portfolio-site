@@ -3,7 +3,7 @@
   "role": "Software Engineer & Programmer | Project Manager in Training",
   "contact": "emmanlemichel2019@gmail.com | +234 816 034 5977 | github.com/miikese",
   "location": "Nigeria | Open to remote opportunities, collaboration, and on-the-job learning",
-  "summary": "Software engineer based in Nigeria, building practical applications with Go, Python, and TypeScript. Background includes a National Diploma in Civil Engineering Technology. Developing project management skills alongside software studies, with an interest in secure software design. Open to work, mentorship, and learning a new stack.",
+  "summary": "Software engineer based in Nigeria, building practical applications with Go, Python and TypeScript. Background in Civil Engineering Technology; developing project management skills alongside software studies. Open to remote work, mentorship and collaboration.",
   "skills": [
     [
       "Programming & interfaces",
@@ -20,19 +20,19 @@
   ],
   "projects": [
     {
-      "title": "Global Browser",
-      "stack": "Go | Chromium | WebSocket | SQLite | Linux | Private source",
-      "description": "Built a working browser-platform MVP with isolated Chromium sessions and a web viewer. Includes authentication, account roles, session quotas, persistent account data, destination checks, and session cleanup."
+      "title": "Marvellous Motors - Development collaborator",
+      "stack": "Go | SQLite | HTML, CSS, JavaScript | github.com/mordecai12-cool/Marvellous-motor2",
+      "description": "Collaborated with project owner Otiti Mordecai Marvellous on customer accounts, inventory, delivery pricing and administrator-reviewed orders. Bank-transfer evidence requires staff review."
     },
     {
-      "title": "Smile Learning",
-      "stack": "React | TypeScript | Vite | Tailwind CSS | github.com/miikese/past-quest-solver",
-      "description": "Developed a responsive interface for exploring past exam questions and answers. Organized reusable question cards, subject views, and search and filtering controls around static and mock study data."
+      "title": "Benue Street Locator",
+      "stack": "React | TypeScript | Leaflet | SQLite | github.com/miikese/benue-street-locator",
+      "description": "Built a mapping MVP with predictive local search, street and satellite views, source-labelled location references and reviewed contributions. Directory coverage remains incomplete."
     },
     {
-      "title": "Campus Resource Manager",
-      "stack": "Python | JSON | unittest | Private source",
-      "description": "Implemented a menu-driven campus inventory application with borrowing, returns, search, and reports. Validates requests before changing records; includes JSON persistence, demonstrations, and regression tests."
+      "title": "MindGrow",
+      "stack": "React | TypeScript | Blockly | SQLite | github.com/miikese/mindgrow",
+      "description": "Developed a learning MVP with 13 playable activities, 30 introductory lessons, visual coding and private learner progress. Python and Go lessons use read-and-reason exercises."
     }
   ],
   "education": [

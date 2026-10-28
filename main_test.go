@@ -177,3 +177,45 @@ func TestProjectCollectionIntegrity(t *testing.T) {
 		}
 	}
 }
+
+// Collaboration credit and source visibility must survive template changes.
+func TestProjectAttributionAndPrivateSources(t *testing.T) {
+	handler, err := newHandler("")
+	if err != nil {
+		t.Fatal(err)
+	}
+	cases := []struct {
+		slug string
+		want []string
+	}{
+		{"marvellous-motors", []string{"My role", "Development collaborator", "Collaboration", "Otiti Mordecai Marvellous", "project owner", "https://github.com/mordecai12-cool/Marvellous-motor2"}},
+		{"campusflow", []string{"AI-assisted project development", "https://github.com/miikese/campusflow", "human collaboration and peer-review evidence remain outstanding"}},
+	}
+	for _, tc := range cases {
+		t.Run(tc.slug, func(t *testing.T) {
+			r := httptest.NewRecorder()
+			handler.ServeHTTP(r, httptest.NewRequest(http.MethodGet, "/projects/"+tc.slug, nil))
+			if r.Code != http.StatusOK {
+				t.Fatalf("status %d", r.Code)
+			}
+			for _, want := range tc.want {
+				if !strings.Contains(r.Body.String(), want) {
+					t.Errorf("missing attribution %q", want)
+				}
+			}
+		})
+	}
+	for _, project := range projects {
+		if project.Visibility != "Private source" {
+			continue
+		}
+		if project.RepoURL != "" {
+			t.Errorf("private project %s exposes a repository link", project.Slug)
+		}
+		r := httptest.NewRecorder()
+		handler.ServeHTTP(r, httptest.NewRequest(http.MethodGet, "/projects/"+project.Slug, nil))
+		if !strings.Contains(r.Body.String(), "Discuss this project") || strings.Contains(r.Body.String(), "GitHub source for") {
+			t.Errorf("private project %s does not offer an appropriate contact action", project.Slug)
+		}
+	}
+}

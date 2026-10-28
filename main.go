@@ -26,6 +26,7 @@ type Project struct {
 	Slug, Title, Category, Blurb                 string
 	Bullets, Stack                               []string
 	RepoURL, SourceLabel, DemoURL                string
+	Role, Collaborators, PreviewCaption          string
 	ScreenshotURL, ScreenshotAlt, DemoLabel      string
 	ScreenshotWidth, ScreenshotHeight            int
 	Featured                                     bool

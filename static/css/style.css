@@ -319,3 +319,10 @@ input::placeholder { color: var(--muted); opacity: 1; }
 .detail-screenshot figcaption { margin-top: 12px; color: var(--muted); font-size: .78rem; }
 /* Keep long project names readable within narrow detail pages. */
 .project-detail .page-heading h1 { font-size: clamp(1.9rem, 8vw, 4.7rem); overflow-wrap: anywhere; }
+
+/* A quiet technical pattern connects the project collection to the hero. */
+.hero { position: relative; isolation: isolate; }
+.hero::before { content: ''; position: absolute; inset: 32px 0; z-index: -1; pointer-events: none; background: radial-gradient(ellipse at 86% 20%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 60%); }
+.project-role { font-family: var(--mono); font-size: .64rem; color: var(--accent); margin: 0 0 10px; }
+.visual-marvellous-motors { background-image: linear-gradient(135deg, transparent 45%, color-mix(in srgb, var(--accent) 8%, transparent) 45%, transparent 75%); }
+.visual-campusflow { background-image: repeating-linear-gradient(0deg, transparent, transparent 19px, color-mix(in srgb, var(--accent) 8%, transparent) 20px); }

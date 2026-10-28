@@ -1,17 +1,23 @@
 # Project selection
 
-Reviewed against the connected GitHub repositories on 8 October 2026.
+Public project descriptions reviewed on 27 October 2026. Older private summaries retain their stated review boundaries; a current portfolio entry does not certify a new production deployment.
 
-The collection is deliberately curated to substantive, implemented projects, following the user's final instruction to remove small exercises and unfinished ideas.
+The collection is curated around substantial applications and tools. Small exercises, early static student-site experiments, empty repositories and profile-only notes remain in GitHub without being promoted as finished products. No repository visibility is changed.
 
-| Project | Evidence reviewed | Presentation |
-| --- | --- | --- |
-| Global Browser | Repository README and local source/documentation | Working MVP; private source; explicit payment/email limitations |
-| Smile Learning | `past-quest-solver/README.md` | Implemented study interface; static/mock data; public source |
-| Campus Resource Manager | `assesment/README.md` and existing local resource documentation | Implemented Python application; private source; single-operator JSON storage |
-| Engineering Portfolio | Current source, HTTP tests, browser checks | Implemented single-binary Go application; public source |
-| TalentGrid | Current routes and account, profile, talent-search, and support handlers reviewed on 9 October 2026 | In development; private source; database-backed runtime validation not claimed |
+| Project | Evidence and presentation |
+| --- | --- |
+| Marvellous Motors | User-confirmed development collaboration with Otiti Mordecai Marvellous, the project owner; public Go/SQLite source. Payment evidence is reviewed by staff, not an automatic payment integration. |
+| CampusFlow | Public Python helpdesk source and documentation; AI-authored implementation is disclosed, with human collaboration and peer-review evidence outstanding. Local JSON storage is intended for one operator. |
+| Benue Street Locator | Public mapping source; first-letter local suggestions, street/satellite views, reviewed contributions and attributed directory references. Incomplete coverage and unpinned references are explicit. |
+| MindGrow | Public learning source; thirteen activities and thirty introductory lessons. Python/Go lessons are read-and-reason exercises. Learner progress is private. |
+| CommunityConnect | Public moderated community-coordination MVP. Boards start empty, counts represent real records, and review does not imply government action. |
+| SmartConvert | Private demonstration application with fictitious adapters. Real bookmaker integrations and live payments are unavailable. |
+| Global Browser | Existing private working-MVP summary; isolated browser sessions with explicit payment/email limitations. |
+| Smile Learning | Public `past-quest-solver` source; responsive study interface with static/mock question data. |
+| Campus Resource Manager | Existing private Python resource-management summary; validated local JSON persistence. |
+| TalentGrid | Existing private development overview. Database-backed runtime validation has not been repeated in this portfolio review. |
+| Engineering Portfolio | Current Go source, embedded assets and HTTP test suite. |
 
-The old ASCII-art and HTTP exercises, Go Reloaded, static student-site experiments, empty SmileConvert repository, and profile-only notes are excluded from the public collection. Their repositories are not deleted or made public. TalentGrid was previously omitted because its README described a scaffold; review of the current source shows substantive handlers, so it is included at the user's request with its development status explicit.
+Four featured projects provide a shorter homepage; every substantial entry remains in the searchable collection. Cards show at most two feature bullets; full descriptions appear on detail pages. Collaboration roles are separate from ownership, and private entries retain empty public-source links. Existing screenshots are local captures and may predate the latest source changes.
 
-No employer history, professional certifications, production usage figures, security certifications, or project-management proficiency levels have been invented. Project management is presented as training; cybersecurity is presented as an interest and learning area.
+No employer history, professional certifications, production usage figures, security certifications or project-management proficiency levels are invented. Project management remains training; cybersecurity remains an interest and learning area. Prepared profile content stays in `github-profile/`; making the matching GitHub profile repository public requires a separate account setting.
